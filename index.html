@@ -12,12 +12,12 @@
     <!-- Top Header / Branding & Actions -->
     <header>
         <div class="logo-container">
-            <img src="logo.png" alt="Sam's Gardens Logo" width="40" height="40">
+            <img src="logo.png" alt="Agro-nest logo" width="40" height="40">
             <span>logo</span>
         </div>
 
         <div class="header-actions">
-            <a href="#get-started">Get Started</a>
+            <a href="pages/products.html">Get Started</a>
             <button type="button" aria-label="More Options">&#8942;</button>
         </div>
     </header>
@@ -25,102 +25,72 @@
     <!-- Navigation Bar -->
     <nav aria-label="Main Navigation">
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#resources">Resources</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/about.html">About Us</a></li>
+            <li><a href="pages/services.html">Services</a></li>
+            <li><a href="pages/products.html">Products</a></li>
+            <li><a href="pages/resources.html">Resources</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Main Content Area -->
     <main>
 
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-text">
-                <h1>Hero Section</h1>
-                <h2>Slogan</h2>
-                <p>Welcome to Agron-nest — providing sustainable agricultural solutions and quality farming services.
-                </p>
+        <!-- Agronist Agricultural Slider Structure -->
+        <section class="slider-section" aria-label="Agronist Agricultural Image Slider">
+            <div class="slider-wrapper">
+
+                <!-- Slide 1: Welcome to Agronist -->
+                <article class="slide">
+                    <img src="images/welcome-agronist.jpg" alt="Agricultural landscape showcasing Welcome to Agronist">
+                    <div class="slide-overlay">
+                        <h2>Welcome to Agro-nest</h2>
+                        <p>Connecting people with agriculture and providing sustainable farming solutions.</p>
+                    </div>
+                </article>
+
+                <!-- Slide 2: Crop Farming -->
+                <article class="slide">
+                    <img src="images/crop-farming.jpg" alt="Vibrant crop farming field with healthy crops">
+                    <div class="slide-overlay">
+                        <h2>Crop Farming</h2>
+                        <p>Growing food for the future with high-yield crops and sustainable soil management.</p>
+                    </div>
+                </article>
+
+                <!-- Slide 3: Poultry Farming -->
+                <article class="slide">
+                    <img src="images/poultry-farming.jpg" alt="Modern poultry farming facility with healthy flock">
+                    <div class="slide-overlay">
+                        <h2>Poultry Farming</h2>
+                        <p>Supporting poultry production with modern chicken rearing and quality egg management.</p>
+                    </div>
+                </article>
+
+                <!-- Slide 4: Fish Farming -->
+                <article class="slide">
+                    <img src="images/fish-farming.jpg" alt="Aquaculture fish farming pond with fresh water fish">
+                    <div class="slide-overlay">
+                        <h2>Fish Farming</h2>
+                        <p>Supporting aquaculture with modern freshwater fish production and pond management.</p>
+                    </div>
+                </article>
+
             </div>
 
-            <div class="hero-image">
-                <img src="forehead-picture.jpg" alt="Forehead Picture - Agricultural banner showcase">
-            </div>
+            <!-- Slider Navigation Controls (For future CSS/JS implementation) -->
+            <button type="button" class="slider-control prev" aria-label="Previous Slide">&lt;</button>
+            <button type="button" class="slider-control next" aria-label="Next Slide">&gt;</button>
+
+            <!-- Slider Pagination Indicators (For future CSS/JS implementation) -->
+            <nav class="slider-dots" aria-label="Slider Page Navigation">
+                <button type="button" class="dot" aria-label="Go to Slide 1"></button>
+                <button type="button" class="dot" aria-label="Go to Slide 2"></button>
+                <button type="button" class="dot" aria-label="Go to Slide 3"></button>
+                <button type="button" class="dot" aria-label="Go to Slide 4"></button>
+            </nav>
         </section>
-
-        <!-- Services & Why Choose Us Container -->
-        <div class="features-wrapper">
-
-            <!-- Our Services Section -->
-            <section class="services-section">
-                <h2>Our Services</h2>
-
-                <div class="services-grid">
-
-                    <!-- Service Card 1 -->
-                    <article class="card">
-                        <div class="icon-placeholder"></div>
-                        <h3>Crop Farming</h3>
-                        <p>Maize, vegetables, wheat, beans, and other crops.</p>
-                        <a href="#crop-farming">Read More &rarr;</a>
-                    </article>
-
-                    <!-- Service Card 2 -->
-                    <article class="card">
-                        <div class="icon-placeholder"></div>
-                        <h3>Poultry Farming</h3>
-                        <p>Chicken rearing, egg production, and poultry management.</p>
-                        <a href="#poultry-farming">Read More &rarr;</a>
-                    </article>
-
-                    <!-- Service Card 3 -->
-                    <article class="card">
-                        <div class="icon-placeholder"></div>
-                        <h3>Fish Farming</h3>
-                        <p>Fish production and aquaculture management.</p>
-                        <a href="#fish-farming">Read More &rarr;</a>
-                    </article>
-
-                </div>
-            </section>
-
-            <!-- Why Choose Us Section -->
-            <section class="why-choose-us-section">
-                <h2>Why Choose Us</h2>
-
-                <div class="reasons-grid">
-
-                    <!-- Reason 1 -->
-                    <article class="card">
-                        <div class="icon-placeholder"></div>
-                        <h3>Quality Product</h3>
-                        <p>Fresh, organically grown, and ethically harvested produce.</p>
-                        <a href="#quality-product">Read More &rarr;</a>
-                    </article>
-
-                    <!-- Reason 2 -->
-                    <article class="card">
-                        <div class="icon-placeholder"></div>
-                        <h3>Quality Services</h3>
-                        <p>Expert management and professional agricultural consultation.</p>
-                        <a href="#quality-services">Read More &rarr;</a>
-                    </article>
-
-                    <!-- Reason 3 -->
-                    <article class="card">
-                        <div class="icon-placeholder"></div>
-                        <h3>Farming Advisor</h3>
-                        <p>Tailored guidance and strategies for successful crop yield.</p>
-                        <a href="#farming-advisor">Read More &rarr;</a>
-                    </article>
-
-                </div>
-            </section>
-
-        </div>
 
     </main>
 
@@ -144,10 +114,10 @@
             <nav class="footer-col" aria-label="Quick Links Navigation">
                 <h3>Quick links</h3>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/about.html">About Us</a></li>
+                    <li><a href="pages/services.html">Services</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
                 </ul>
             </nav>
 
@@ -155,10 +125,10 @@
             <nav class="footer-col" aria-label="Services Navigation">
                 <h3>Services</h3>
                 <ul>
-                    <li><a href="#crop-farming">Crop Farming</a></li>
-                    <li><a href="#poultry-farming">Poultry Farming</a></li>
-                    <li><a href="#fish-farming">Fish Farming</a></li>
-                    <li><a href="#advisory">Farming Advisory</a></li>
+                    <li><a href="pages/services.html#crop-farming">Crop Farming</a></li>
+                    <li><a href="pages/services.html#poultry-farming">Poultry Farming</a></li>
+                    <li><a href="pages/services.html#fish-farming">Fish Farming</a></li>
+                    <li><a href="pages/services.html#advisory">Farming Advisory</a></li>
                 </ul>
             </nav>
 

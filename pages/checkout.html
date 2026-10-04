@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Agro-nest</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Top Header / Branding & Actions -->
+    <header>
+        <div class="logo-container">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="Agro-nest Logo" width="40" height="40">
+                <span>Agro-nest</span>
+            </a>
+        </div>
+
+        <div class="header-actions">
+            <a href="products.html">Get Started</a>
+            <a href="cart.html" aria-label="Shopping Cart">Cart</a>
+            <button type="button" aria-label="More Options">&#8942;</button>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <section class="page-header">
+            <h1>Checkout</h1>
+            <p>Complete your shipping and payment details to finalize your order.</p>
+        </section>
+
+        <section class="checkout-section">
+            <form action="order-comfirmation.html" method="get">
+                <h2>Billing & Delivery Details</h2>
+                <div>
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                <div>
+                    <label for="address">Delivery Address:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <button type="submit">Place Order &rarr;</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-columns">
+
+            <section class="footer-col">
+                <h3>Social Media Platform</h3>
+                <p>Connect with us on our official social channels for updates and tips.</p>
+                <ul class="social-links">
+                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                    <li><a href="#" aria-label="Twitter">Twitter</a></li>
+                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                    <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                </ul>
+            </section>
+
+            <nav class="footer-col" aria-label="Quick Links Navigation">
+                <h3>Quick links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer-col" aria-label="Services Navigation">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html#crop-farming">Crop Farming</a></li>
+                    <li><a href="services.html#poultry-farming">Poultry Farming</a></li>
+                    <li><a href="services.html#fish-farming">Fish Farming</a></li>
+                    <li><a href="services.html#advisory">Farming Advisory</a></li>
+                </ul>
+            </nav>
+
+            <section class="footer-col">
+                <h3>Contact Us</h3>
+                <address>
+                    <p>Phone: +260 970 000 000</p>
+                    <p>Email: info@samsgardens.com</p>
+                    <p>Location: Ndola, Zambia</p>
+                </address>
+            </section>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
