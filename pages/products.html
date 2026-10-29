@@ -46,24 +46,28 @@
         </section>
 
         <section class="products-grid">
-            <article class="card">
+            <article class="card" data-product-id="vegetables" data-product-name="Fresh Organic Vegetables" data-product-price="35">
                 <h3>Fresh Organic Vegetables</h3>
                 <p>Locally grown spinach, tomatoes, onions, and cabbages.</p>
-                <a href="cart.html">Add to Cart &rarr;</a>
+                <p>Price: K35.00</p>
+                <button type="button" class="add-to-cart">Add to Cart &rarr;</button>
             </article>
 
-            <article class="card">
+            <article class="card" data-product-id="maize-seeds" data-product-name="High-Yield Maize Seeds" data-product-price="120">
                 <h3>High-Yield Maize Seeds</h3>
                 <p>Drought-resistant seed varieties for optimal harvest.</p>
-                <a href="cart.html">Add to Cart &rarr;</a>
+                <p>Price: K120.00</p>
+                <button type="button" class="add-to-cart">Add to Cart &rarr;</button>
             </article>
 
-            <article class="card">
+            <article class="card" data-product-id="poultry-eggs" data-product-name="Poultry & Eggs" data-product-price="80">
                 <h3>Poultry & Eggs</h3>
                 <p>Fresh farm eggs and healthy layer/broiler chicks.</p>
-                <a href="cart.html">Add to Cart &rarr;</a>
+                <p>Price: K80.00</p>
+                <button type="button" class="add-to-cart">Add to Cart &rarr;</button>
             </article>
         </section>
+        <p id="cart-message" role="status" aria-live="polite"></p>
     </main>
 
     <!-- Footer Section -->
@@ -113,6 +117,7 @@
         </div>
     </footer>
 
+    <script src="../js/product.js"></script>
 </body>
 
 </html>
