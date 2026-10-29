@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Page metadata and shared/page-specific styles keep this form responsive and on-brand. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create an AgroNest farmer account.">
+    <title>Farmer Registration | AgroNest</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body class="registration-page">
+    <!-- Brand header and primary navigation provide the same routes as the public site. -->
+    <header>
+        <a href="../index.html" class="logo-container" aria-label="AgroNest home">
+            <img src="../images/logo.png" alt="" width="40" height="40">
+            <span>AgroNest</span>
+        </a>
+        <nav class="header-actions" aria-label="Quick actions">
+            <a href="products-services.html">Explore our farm</a>
+        </nav>
+    </header>
+
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="../marketplace.php">Marketplace</a></li>
+            <li><a href="products-services.html">Products &amp; Services</a></li>
+            <li><a href="farm-resources.html">Farm &amp; Resources</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="../farmer/login.php">Farmer login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Explicitly associated labels keep each registration control accessible. -->
+    <main class="registration-main">
+        <section class="registration-card" aria-labelledby="registration-heading">
+            <header class="registration-heading">
+                <p class="registration-kicker">Join the AgroNest community</p>
+                <h1 id="registration-heading">Create your farmer account</h1>
+                <p>Register to get started. Your account will be reviewed before it is approved.</p>
+            </header>
+
+            <!-- Submitted values are validated again by the root-level farmer registration endpoint. -->
+            <form class="registration-form" action="../farmer/register.php" method="post">
+                <p class="registration-field">
+                    <label for="full-name">Full name</label>
+                    <input id="full-name" name="full_name" type="text" autocomplete="name"
+                        placeholder="e.g. Chipo Banda" maxlength="100" required
+                        aria-describedby="full-name-error">
+                    <span class="field-error" id="full-name-error" aria-live="polite"></span>
+                </p>
+
+                <p class="registration-field">
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email" autocomplete="email"
+                        placeholder="you@example.com" maxlength="150" required
+                        aria-describedby="email-error">
+                    <span class="field-error" id="email-error" aria-live="polite"></span>
+                </p>
+
+                <p class="registration-field">
+                    <label for="phone">Phone number</label>
+                    <input id="phone" name="phone" type="tel" autocomplete="tel"
+                        placeholder="+260 97 000 0000" maxlength="20" required
+                        aria-describedby="phone-hint phone-error">
+                    <span class="field-hint" id="phone-hint">Include your country code if you use one.</span>
+                    <span class="field-error" id="phone-error" aria-live="polite"></span>
+                </p>
+
+                <p class="registration-field">
+                    <label for="password">Password</label>
+                    <span class="password-control">
+                        <input id="password" name="password" type="password" autocomplete="new-password"
+                            placeholder="At least 12 characters" minlength="12" maxlength="72" required
+                            aria-describedby="password-hint password-error">
+                        <button class="password-toggle" type="button" data-password-toggle
+                            aria-controls="password" aria-label="Show password" aria-pressed="false">Show</button>
+                    </span>
+                    <span class="field-hint" id="password-hint">Use at least 12 characters.</span>
+                    <span class="field-error" id="password-error" aria-live="polite"></span>
+                </p>
+
+                <p class="registration-field">
+                    <label for="confirm-password">Confirm password</label>
+                    <span class="password-control">
+                        <input id="confirm-password" name="confirm_password" type="password"
+                            autocomplete="new-password" placeholder="Enter your password again"
+                            minlength="12" maxlength="72" required
+                            aria-describedby="confirm-password-error">
+                        <button class="password-toggle" type="button" data-password-toggle
+                            aria-controls="confirm-password" aria-label="Show confirmation password"
+                            aria-pressed="false">Show</button>
+                    </span>
+                    <span class="field-error" id="confirm-password-error" aria-live="polite"></span>
+                </p>
+
+                <p class="registration-form-message" id="registration-form-message"
+                    role="status" aria-live="polite" hidden></p>
+
+                <button class="registration-submit" type="submit">Create Account</button>
+            </form>
+
+            <p class="registration-login-note" id="login-not-available">
+                Already have an account? <a href="../farmer/login.php">Farmer login</a>.
+            </p>
+        </section>
+    </main>
+
+    <!-- Site information and contact links close the public registration page. -->
+    <footer>
+        <section class="footer-col">
+            <h3>AgroNest</h3>
+            <p>Growing Food. Building Futures.</p>
+            <p>Integrated farming and practical agricultural support in Ndola, Zambia.</p>
+        </section>
+        <nav class="footer-col" aria-label="Explore AgroNest">
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products-services.html">Products &amp; Services</a></li>
+                <li><a href="farm-resources.html">Farm &amp; Resources</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <section class="footer-col">
+            <h3>Contact</h3>
+            <address>
+                <p><a href="tel:+260970000000">+260 970 000 000</a></p>
+                <p><a href="mailto:info@agronest.com">info@agronest.com</a></p>
+                <p>Ndola, Copperbelt Province, Zambia</p>
+            </address>
+        </section>
+    </footer>
+
+    <script src="../js/register.js"></script>
+</body>
+
+</html>

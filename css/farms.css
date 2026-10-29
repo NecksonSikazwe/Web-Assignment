@@ -1,0 +1,211 @@
+.farm-management {
+  /* Farm forms and owner-scoped farm cards share a readable centered content width. */
+  max-width: 900px;
+}
+
+.farm-notice {
+  margin: 0 0 22px;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--soft);
+  color: var(--text);
+}
+
+.farm-notice p {
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.farm-notice ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.farm-notice--error {
+  border-color: #d7aaaa;
+  background: #fff3f1;
+  color: #7e2222;
+}
+
+.farm-form-card {
+  /* The add/edit farm forms sit in a bordered card above the owner's farm list. */
+  margin-bottom: 38px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+.farm-form-card h2,
+.farm-list-section > h2 {
+  margin: 0 0 20px;
+  color: var(--text);
+  font-size: 22px;
+}
+
+.farm-form {
+  display: grid;
+  gap: 16px;
+}
+
+.farm-field {
+  /* Labels and controls form a clear vertical field group with no paragraph gap. */
+  display: grid;
+  gap: 7px;
+  margin: 0;
+}
+
+.farm-field label {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.farm-field label span {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.farm-field input,
+.farm-field textarea {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.farm-field input:focus,
+.farm-field textarea:focus {
+  border-color: var(--green);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(25, 97, 56, 0.15);
+}
+
+.farm-form button[type="submit"],
+.farm-delete-button {
+  min-height: 44px;
+}
+
+.farm-list {
+  /* Reset list defaults so semantic list items retain the original card alignment. */
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.farm-list > li {
+  min-width: 0;
+}
+
+.farm-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card-bg);
+}
+
+.farm-item h3 {
+  margin: 0 0 4px;
+  color: var(--green);
+  font-size: 19px;
+}
+
+.farm-item-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.farm-item p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.farm-item .farm-item-location {
+  margin-top: 0;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.farm-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.farm-item-actions form {
+  margin: 0;
+}
+
+.farm-action-link {
+  color: var(--green);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.farm-delete-button {
+  padding: 8px 12px;
+  border: 1px solid #a52c2c;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #8d2020;
+  font-weight: 700;
+}
+
+.farm-delete-button:hover {
+  background: #fff3f1;
+}
+
+.farm-empty-state {
+  margin: 0;
+  padding: 20px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.farm-cancel-link {
+  justify-self: center;
+  color: var(--green);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  /* Stack farm details and actions for touch-friendly narrow layouts. */
+  .farm-management {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .farm-form-card {
+    padding: 20px 16px;
+  }
+
+  .farm-item {
+    flex-direction: column;
+    padding: 18px 16px;
+  }
+
+  .farm-item-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

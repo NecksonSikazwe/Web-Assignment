@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Page metadata and stylesheets establish the resource page's shared presentation. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Discover farms on AgroNest, browse agricultural products by farm, and connect with local farmers in Ndola, Copperbelt Province, Zambia.">
+    <title>Farm &amp; Resources | AgroNest</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/farm-resources.css">
+</head>
+
+<body>
+    <!-- Site branding and quick access to farm enquiries. -->
+    <header>
+        <a href="../index.html" class="logo-container" aria-label="AgroNest home">
+            <img src="../images/logo.png" alt="" width="40" height="40">
+            <span>AgroNest</span>
+        </a>
+        <nav class="header-actions" aria-label="Quick actions">
+            <a href="contact.html">Ask a farm question</a>
+        </nav>
+    </header>
+
+    <!-- Primary navigation connects farm resources with the other site pages. -->
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="../marketplace.php">Marketplace</a></li>
+            <li><a href="products-services.html">Products &amp; Services</a></li>
+            <li><a href="farm-resources.html" aria-current="page">Farm &amp; Resources</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="../farmer/login.php">Farmer login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content contains farm listings and practical agricultural guidance. -->
+    <main>
+        <!-- Page introduction summarizes the farms and learning resources below. -->
+        <header class="page-header resources-header">
+            <p class="resource-kicker">Learn and grow with AgroNest</p>
+            <h1>Farm &amp; Resources</h1>
+            <p>Discover local farms, browse their products, and find practical information for crop and livestock
+                production, sustainable farming and day-to-day farm activities.</p>
+        </header>
+
+        <!-- Farm showcase links each profile to its produce, categories, and contact actions. -->
+        <section class="resource-section farm-showcase-section" id="farm-showcase"
+            aria-labelledby="farm-showcase-heading">
+            <header class="resource-heading">
+                <p class="resource-kicker">Local farms</p>
+                <h2 id="farm-showcase-heading">Farms on AgroNest</h2>
+                <p>Browse farms producing crops and livestock in and around Ndola. View a farm's produce, discover the
+                    farmer behind it, and get in touch directly.</p>
+            </header>
+
+            <!-- Farm articles group location, production categories, products, and contact actions. -->
+            <ul class="farm-card-grid" id="farm-card-grid" aria-label="Farm listings">
+
+                <!-- FARM 001 — AgroNest Farm -->
+                <li>
+                    <article class="farm-card"
+                             id="farm-001"
+                             data-farm-id="001"
+                             data-farmer-id="001"
+                             data-categories="vegetables grains poultry livestock">
+
+                        <figure class="farm-card__figure">
+                            <img src="../images/welcome-agronist.jpg"
+                                 alt="AgroNest farm landscape showing cultivated fields and agricultural production"
+                                 class="farm-card__image"
+                                 loading="lazy">
+                            <figcaption class="farm-card__figcaption">AgroNest Farm</figcaption>
+                        </figure>
+
+                        <header class="farm-card__header">
+                            <h3 class="farm-card__name">AgroNest Farm</h3>
+                            <p class="farm-card__farmer-name">AgroNest Agricultural Enterprise</p>
+                            <p class="farm-card__location">
+                                <span aria-hidden="true">📍</span> Ndola, Copperbelt Province, Zambia
+                            </p>
+                        </header>
+
+                        <p class="farm-card__description">
+                            An integrated farm combining crop production, livestock, practical farm services and
+                            agricultural training. Focused on a sustainable and connected local food system.
+                        </p>
+
+                        <ul class="farm-card__categories" aria-label="Farming categories">
+                            <li class="farm-card__category-tag" data-category="vegetables">Vegetables</li>
+                            <li class="farm-card__category-tag" data-category="grains">Grains &amp; Legumes</li>
+                            <li class="farm-card__category-tag" data-category="poultry">Poultry</li>
+                            <li class="farm-card__category-tag" data-category="livestock">Livestock</li>
+                        </ul>
+
+                        <section class="farm-card__products-preview" aria-label="Products from this farm">
+                            <h4 class="farm-card__products-heading">Produces</h4>
+                            <ul class="farm-card__product-list">
+                                <li><a href="products-services.html#featured-products"
+                                       data-product-id="001">Tomatoes</a></li>
+                                <li><a href="products-services.html#featured-products"
+                                       data-product-id="002">Maize</a></li>
+                                <li><a href="products-services.html#featured-products"
+                                       data-product-id="005">Soybeans</a></li>
+                                <li><a href="products-services.html#featured-products"
+                                       data-product-id="003">Broilers</a></li>
+                                <li><a href="products-services.html#featured-products"
+                                       data-product-id="006">Eggs</a></li>
+                            </ul>
+                        </section>
+
+                        <footer class="farm-card__footer">
+                            <a href="farm-resources.html#farm-001"
+                               class="btn-farm-profile"
+                               data-action="view-farm"
+                               data-farm-id="001">
+                                View farm
+                            </a>
+                            <a href="products-services.html#featured-products"
+                               class="btn-farm-products"
+                               data-action="view-farm-products"
+                               data-farm-id="001">
+                                View products
+                            </a>
+                            <button type="button"
+                                    class="btn-contact-farmer"
+                                    data-action="contact-farmer"
+                                    data-farmer-id="001"
+                                    data-farmer-name="AgroNest Farm"
+                                    aria-label="Contact AgroNest Farm">
+                                Contact farmer
+                            </button>
+                        </footer>
+
+                    </article>
+                </li>
+
+                <!-- FARM 002 — Placeholder: ready for additional farmer registration -->
+                <li>
+                    <article class="farm-card farm-card--placeholder"
+                             data-farm-id="002"
+                             data-farmer-id=""
+                             data-categories="">
+
+                        <figure class="farm-card__figure">
+                            <img src="../images/fish-farming.jpg"
+                                 alt="Fish farming pond representing aquaculture farming opportunities in the region"
+                                 class="farm-card__image"
+                                 loading="lazy">
+                            <figcaption class="farm-card__figcaption">Aquaculture &amp; Mixed Farming</figcaption>
+                        </figure>
+
+                        <header class="farm-card__header">
+                            <h3 class="farm-card__name">Copperbelt Aquaculture Farm</h3>
+                            <p class="farm-card__farmer-name">Local Farmer — Ndola District</p>
+                            <p class="farm-card__location">
+                                <span aria-hidden="true">📍</span> Ndola, Copperbelt Province, Zambia
+                            </p>
+                        </header>
+
+                        <p class="farm-card__description">
+                            A mixed-use farm incorporating fish farming alongside crop and vegetable production.
+                            Future farmer profiles and products will appear here as the platform grows.
+                        </p>
+
+                        <ul class="farm-card__categories" aria-label="Farming categories">
+                            <li class="farm-card__category-tag" data-category="aquaculture">Aquaculture</li>
+                            <li class="farm-card__category-tag" data-category="vegetables">Vegetables</li>
+                        </ul>
+
+                        <section class="farm-card__products-preview" aria-label="Products coming soon">
+                            <h4 class="farm-card__products-heading">Produces</h4>
+                            <p class="farm-card__coming-soon">Product listings coming soon.</p>
+                        </section>
+
+                        <footer class="farm-card__footer">
+                            <a href="contact.html"
+                               class="btn-farm-profile"
+                               data-action="view-farm"
+                               data-farm-id="002">
+                                Learn more
+                            </a>
+                            <a href="products-services.html"
+                               class="btn-farm-products"
+                               data-action="view-farm-products"
+                               data-farm-id="002">
+                                View products
+                            </a>
+                            <button type="button"
+                                    class="btn-contact-farmer"
+                                    data-action="contact-farmer"
+                                    data-farmer-id="002"
+                                    data-farmer-name="Copperbelt Aquaculture Farm"
+                                    aria-label="Contact Copperbelt Aquaculture Farm">
+                                Contact farmer
+                            </button>
+                        </footer>
+
+                    </article>
+                </li>
+
+            </ul>
+
+            <!-- Invitation for local farmers to enquire about being listed. -->
+            <p class="offerings-note farm-showcase-note">
+                Are you a farmer in Ndola or the Copperbelt? Contact AgroNest to list your farm and products on this
+                platform and connect with potential buyers.
+            </p>
+            <a class="btn-primary offerings-cta" href="contact.html">List your farm with AgroNest</a>
+        </section>
+
+        <!-- ================================================
+             EXISTING RESOURCE SECTIONS — preserved exactly
+             ================================================ -->
+
+        <!-- Crop and livestock guides share practical production starting points. -->
+        <section class="resource-section" aria-labelledby="production-heading">
+            <header class="resource-heading">
+                <h2 id="production-heading">Farm production guides</h2>
+                <p>Use these starting points alongside local conditions, crop requirements and advice from qualified
+                    agricultural extension professionals.</p>
+            </header>
+            <ul class="resource-grid">
+                <li class="resource-card">
+                    <h3>Crop production</h3>
+                    <p>Plan maize, soybean, rape and tomato production around suitable varieties, field preparation,
+                        soil condition, planting timing and regular crop monitoring.</p>
+                    <ul>
+                        <li>Check seed quality and suitability before planting.</li>
+                        <li>Keep field records for planting dates, inputs and observations.</li>
+                        <li>Inspect crops regularly and seek help when unfamiliar symptoms appear.</li>
+                    </ul>
+                </li>
+                <li class="resource-card">
+                    <h3>Livestock management</h3>
+                    <p>Good husbandry supports animal wellbeing and farm productivity across broilers, layers and goats.</p>
+                    <ul>
+                        <li>Provide clean water, suitable feed and appropriate shelter.</li>
+                        <li>Keep housing clean and follow locally recommended biosecurity practices.</li>
+                        <li>Consult a veterinary professional about animal health concerns.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Sustainability guidance covers soil stewardship and irrigation use. -->
+        <section class="resource-section resource-tint" aria-labelledby="sustainable-heading">
+            <header class="resource-heading">
+                <h2 id="sustainable-heading">Sustainable practices and irrigation</h2>
+                <p>Farm practices should fit the soil, water availability, crop and local climate.</p>
+            </header>
+            <ul class="resource-grid">
+                <li class="resource-card">
+                    <h3>Care for soil and farm resources</h3>
+                    <p>Maintain soil cover where practical, rotate crops thoughtfully, limit erosion and use organic
+                        matter such as manure according to crop and soil needs. Store and apply manure responsibly.</p>
+                </li>
+                <li class="resource-card">
+                    <h3>Use irrigation thoughtfully</h3>
+                    <p>Match irrigation to crop growth stage, soil moisture and weather. Check for leaks, avoid
+                        waterlogging and use efficient methods suited to the farm's available water and equipment.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Activity list highlights typical seasonal tasks on the farm. -->
+        <section class="resource-section" aria-labelledby="activities-heading">
+            <header class="resource-heading">
+                <h2 id="activities-heading">Farm activities</h2>
+                <p>Seasonal farm work may include:</p>
+            </header>
+            <ul class="activity-list">
+                <li>Preparing fields and planning crop rotations.</li>
+                <li>Planting and tending maize, soybeans, rape and tomatoes.</li>
+                <li>Feeding, watering and monitoring broilers, layers and goats.</li>
+                <li>Managing irrigation, soil health and organic manure.</li>
+                <li>Sharing practical farm knowledge through training and advisory support.</li>
+            </ul>
+        </section>
+
+        <!-- Short practical articles share planning and record-keeping advice. -->
+        <section class="resource-section resource-tint" aria-labelledby="articles-heading">
+            <header class="resource-heading">
+                <h2 id="articles-heading">Articles and practical tips</h2>
+            </header>
+            <ul class="resource-grid">
+                <li class="resource-card">
+                    <h3>Start with a farm plan</h3>
+                    <p>Before the season, list the crops or animals you intend to manage, available land and water,
+                        expected costs, labour needs and likely buyers. Review the plan as conditions change.</p>
+                </li>
+                <li class="resource-card">
+                    <h3>Keep simple farm records</h3>
+                    <p>Record dates, quantities, costs, animal health observations and harvests. Consistent notes help
+                        compare seasons and make better-informed decisions.</p>
+                </li>
+                <li class="resource-card">
+                    <h3>Use advice suited to your farm</h3>
+                    <p>Recommendations vary with location, soil, season and available resources. Confirm input rates and
+                        animal treatment advice with a qualified local professional.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Native disclosure elements let readers open answers to common questions. -->
+        <section class="resource-section faq-section" aria-labelledby="faq-heading">
+            <header class="resource-heading">
+                <h2 id="faq-heading">Frequently asked questions</h2>
+            </header>
+            <details>
+                <summary>What crops does AgroNest focus on?</summary>
+                <p>Our crop focus includes maize, soybeans, rape and tomatoes. Production and availability may vary
+                    seasonally; contact us for current information.</p>
+            </details>
+            <details>
+                <summary>What livestock does the farm include?</summary>
+                <p>Our integrated farm focus includes broilers, eggs and goats. Contact AgroNest to ask about current
+                    production and availability.</p>
+            </details>
+            <details>
+                <summary>Can I get farming advice or training?</summary>
+                <p>AgroNest provides agricultural advisory, training and farm information. Use the contact page to ask
+                    about your needs and current opportunities.</p>
+            </details>
+            <details>
+                <summary>How should I use organic manure?</summary>
+                <p>Application depends on manure condition, crop and soil needs. Use well-managed manure responsibly
+                    and seek local agronomic advice for rates and timing.</p>
+            </details>
+            <details>
+                <summary>How can I list my farm on AgroNest?</summary>
+                <p>Contact AgroNest to register your farm and products on the platform. We aim to connect local farmers
+                    with households, traders, retailers, institutions and restaurants across the Copperbelt.</p>
+            </details>
+        </section>
+
+        <!-- Final call to action routes farm questions to the contact page. -->
+        <section class="resources-contact">
+            <h2>Have a farm question?</h2>
+            <p>Contact AgroNest for information about our farm, services or training.</p>
+            <a class="btn-primary" href="contact.html">Contact AgroNest</a>
+        </section>
+    </main>
+
+    <!-- Enquiry dialog is populated with farm context by the existing site script. -->
+    <dialog id="contact-farmer-dialog" aria-labelledby="dialog-heading" aria-modal="true">
+        <header>
+            <h2 id="dialog-heading">Enquire about a farm</h2>
+            <button type="button" id="dialog-close" aria-label="Close enquiry form">✕</button>
+        </header>
+        <p id="dialog-context" class="dialog-context"></p>
+        <!-- Visitor details and message are grouped in a labeled form fieldset. -->
+        <form id="farmer-enquiry-form"
+              data-target-farmer-id=""
+              data-target-product-id=""
+              action="contact.html"
+              method="get"
+              novalidate>
+            <fieldset>
+                <legend>Your details</legend>
+                <!-- Name, email, optional phone, and message fields share the form-group styles. -->
+                <p class="form-group">
+                    <label for="enquiry-name">Your name</label>
+                    <input type="text" id="enquiry-name" name="name"
+                           placeholder="Enter your name" required autocomplete="name">
+                </p>
+                <p class="form-group">
+                    <label for="enquiry-email">Your email</label>
+                    <input type="email" id="enquiry-email" name="email"
+                           placeholder="Enter your email" required autocomplete="email">
+                </p>
+                <p class="form-group">
+                    <label for="enquiry-phone">Phone (optional)</label>
+                    <input type="tel" id="enquiry-phone" name="phone"
+                           placeholder="Enter your phone number" autocomplete="tel">
+                </p>
+                <p class="form-group">
+                    <label for="enquiry-message">Message</label>
+                    <textarea id="enquiry-message" name="message" rows="4"
+                              placeholder="Write your enquiry here..." required></textarea>
+                </p>
+            </fieldset>
+            <!-- Actions send the enquiry or cancel and close the dialog. -->
+            <footer class="dialog-footer">
+                <button type="submit" class="btn-primary" id="dialog-submit">Send enquiry</button>
+                <button type="button" id="dialog-cancel">Cancel</button>
+            </footer>
+        </form>
+    </dialog>
+
+    <!-- Shared footer contains site navigation and AgroNest contact information. -->
+    <footer>
+        <section class="footer-col">
+            <h3>AgroNest</h3>
+            <p>Growing Food. Building Futures.</p>
+            <p>Integrated farming and practical agricultural support in Ndola, Zambia.</p>
+        </section>
+        <nav class="footer-col" aria-label="Explore AgroNest">
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products-services.html">Products &amp; Services</a></li>
+                <li><a href="farm-resources.html" aria-current="page">Farm &amp; Resources</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <section class="footer-col">
+            <h3>Contact</h3>
+            <address>
+                <p><a href="tel:+260970000000">+260 970 000 000</a></p>
+                <p><a href="mailto:info@agronest.com">info@agronest.com</a></p>
+                <p>Ndola, Copperbelt Province, Zambia</p>
+            </address>
+        </section>
+    </footer>
+
+    <!-- Shared script supports the existing farmer enquiry dialog on this page. -->
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+/* ==========================================================================
+   AGRO-NEST — CONTACT PAGE  (css/contact.css)
+   Styles specific to pages/contact.html only.
+   Requires: css/global.css  (loaded first)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CONTACT CARD WRAPPER
+   -------------------------------------------------------------------------- */
+.contact-card-wrapper {
+  /* Centers the contact panel while preserving side padding on small screens. */
+  max-width: 960px;
+  margin: 10px auto 40px;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.contact-card {
+  /* Two-column contact layout with a full-width introduction row. */
+  max-width: 960px;
+  margin: 10px auto 40px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  min-height: 440px;
+}
+
+/* --------------------------------------------------------------------------
+   CONTACT CARD HEADER
+   -------------------------------------------------------------------------- */
+.contact-card-header {
+  /* Heading spans both columns and separates the form content below. */
+  grid-column: 1 / -1;
+  padding: 40px 32px 32px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, #ffffff 0%, #f7faf8 100%);
+}
+
+.contact-card-header h1 {
+  margin: 0 0 10px;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--green);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.contact-card-header p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   TWO-COLUMN BODY  (info column + form column)
+   -------------------------------------------------------------------------- */
+.contact-card-body {
+  /* Shared two-column body used when the card content is wrapped separately. */
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  min-height: 440px;
+}
+
+/* Left column — contact details */
+.contact-info-col {
+  /* Contact details occupy the first column with a subtle contrasting surface. */
+  padding: 40px 36px;
+  background: #f7faf8;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info-col h2,
+.contact-form-col h2 {
+  margin: 0 0 24px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--green);
+  display: inline-block;
+  align-self: flex-start;
+}
+
+/* Contact detail list items */
+.contact-details-list {
+  /* Present location, phone, email, and hours as evenly spaced entries. */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-detail-item {
+  /* Align each contact icon with its associated text block. */
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  font-size: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
+}
+
+.contact-detail-item address {
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-detail-body {
+  min-width: 0;
+}
+
+.contact-detail-item strong {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+
+.contact-detail-item p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.contact-detail-item a {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.contact-detail-item a:hover {
+  /* Underline direct contact links to distinguish them from static text. */
+  text-decoration: underline;
+}
+
+/* Right column — send message form */
+.contact-form-col {
+  /* The form column retains a clean white background beside the details panel. */
+  padding: 40px 36px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-col form {
+  /* Keep input groups in a consistent vertical sequence. */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Send message submit button */
+.btn-send-message {
+  /* Full-width call to action makes form submission easy to find. */
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--green);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  margin-top: 4px;
+}
+
+.btn-send-message:hover {
+  background: var(--green-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(25, 97, 56, 0.25);
+}
+
+.btn-send-message:active {
+  transform: translateY(0);
+}
+
+/* Location map placeholder */
+.contact-map {
+  /* Align the map placeholder with the contact panel above it. */
+  max-width: 960px;
+  margin: 0 auto 48px;
+  padding: 0 24px;
+}
+
+.contact-map h2 {
+  margin: 0 0 16px;
+  color: var(--text);
+  font-size: 22px;
+}
+
+.map-placeholder {
+  /* Decorative placeholder communicates location without embedding an external map. */
+  min-height: 220px;
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(135deg, rgba(234, 242, 236, 0.92), rgba(247, 250, 248, 0.96)),
+    repeating-linear-gradient(45deg, transparent 0 22px, rgba(25, 97, 56, 0.05) 22px 23px);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.map-marker {
+  color: var(--green);
+  font-size: 32px;
+  line-height: 1;
+}
+
+.map-placeholder p {
+  margin: 12px 0 4px;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.map-caption {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Stack details above the form when there is not enough width for two columns. */
+  .contact-card,
+  .contact-card-body {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    margin: 10px 16px 40px;
+  }
+
+  .contact-info-col {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 28px 20px;
+  }
+
+  .contact-form-col {
+    padding: 28px 20px;
+  }
+
+  .contact-card-header {
+    padding: 30px 18px 24px;
+  }
+
+  .contact-card-header h1 {
+    font-size: 26px;
+  }
+
+  .contact-map {
+    padding: 0 16px;
+  }
+}

@@ -1,0 +1,777 @@
+/* ========================================
+   PRODUCTS-SERVICES PAGE STYLESHEET
+   css/products-services.css
+   Requires: css/global.css (loaded first)
+   ======================================== */
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+.products-services-header {
+  /* Soft gradient distinguishes the page introduction without obscuring its copy. */
+  padding: 72px 24px 56px;
+  margin-bottom: 0;
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(25, 97, 56, 0.1), transparent 68%),
+    linear-gradient(180deg, var(--soft), #ffffff);
+}
+
+.products-services-header h1 {
+  margin-bottom: 14px;
+  color: var(--green);
+  font-size: clamp(36px, 5vw, 52px);
+  letter-spacing: -0.035em;
+}
+
+.products-services-header > p:last-child {
+  max-width: 720px;
+  font-size: 17px;
+}
+
+.products-kicker {
+  /* Reusable uppercase label identifies each product and service subsection. */
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   SECTION LAYOUT
+   ======================================== */
+.offerings-section {
+  /* Consistent section padding keeps the offerings page easy to scan. */
+  padding: 72px 24px;
+}
+
+.offerings-tint {
+  background: var(--card-bg);
+  border-block: 1px solid var(--line);
+}
+
+.offerings-heading {
+  max-width: 760px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.offerings-heading h2 {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: clamp(26px, 3vw, 34px);
+  letter-spacing: -0.025em;
+}
+
+.offerings-heading > p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ========================================
+   EXISTING OFFERING CARDS (crops/services)
+   ======================================== */
+.offerings-grid {
+  /* Auto-fit cards to the available width while preserving a readable minimum size. */
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.offering-card {
+  /* Text-only crop and service cards use the shared border and elevation. */
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.offering-card h3 {
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: 19px;
+}
+
+.offering-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.offerings-note {
+  max-width: 760px;
+  margin: 28px auto 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+.offerings-cta {
+  /* Center section actions beneath their note or card group. */
+  display: table;
+  margin: 22px auto 0;
+}
+
+/* ========================================
+   FEATURED PRODUCTS SHOWCASE SECTION
+   ======================================== */
+.products-showcase-section {
+  /* A tinted surface visually groups filters and the featured product cards. */
+  background: var(--card-bg);
+  border-block: 1px solid var(--line);
+}
+
+/* ========================================
+   PRODUCT FILTER BAR
+   ======================================== */
+.product-filter-bar {
+  /* Keep category controls aligned to the same width as the card listing. */
+  max-width: 1040px;
+  margin: 0 auto 36px;
+}
+
+.product-filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.product-filter-btn {
+  /* Pill-shaped buttons remain compact and wrap naturally at smaller widths. */
+  padding: 9px 17px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.product-filter-btn:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.product-filter-btn--active,
+.product-filter-btn[aria-pressed="true"] {
+  /* Expose the selected filter with both color and the pressed-state attribute. */
+  background: var(--green);
+  border-color: var(--green);
+  color: #ffffff;
+}
+
+/* ========================================
+   PRODUCT CARD GRID
+   ======================================== */
+.product-card-grid {
+  /* Responsive columns keep a consistent minimum width and gap between listings. */
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+  gap: 26px;
+  padding: 0;
+  list-style: none;
+}
+
+/* ========================================
+   PRODUCT CARD COMPONENT
+   ======================================== */
+.product-card {
+  /* Flex layout lets actions align at the bottom despite descriptions of different lengths. */
+  background: #ffffff;
+  border: 1px solid rgba(25, 97, 56, 0.14);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Product image */
+.product-card__figure {
+  /* The figure clips the hover zoom and provides a fallback surface behind the photo. */
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--soft);
+}
+
+.product-card__image {
+  /* A uniform image window keeps the product grid aligned across varied source photos. */
+  width: 100%;
+  height: 218px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.product-card__image--leafy {
+  /* Shift the crop toward the leafy crop within its taller source photograph. */
+  object-position: center 70%;
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.035);
+}
+
+.product-card__category {
+  /* Overlay a high-contrast category label on the product image. */
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(19, 77, 44, 0.92);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Product header */
+.product-card__header {
+  /* Group the product name with farm attribution and location. */
+  padding: 19px 22px 0;
+}
+
+.product-card__name {
+  margin: 0 0 4px;
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.product-card__farm-name {
+  margin: 0 0 2px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.product-card__farm-link {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.product-card__farm-link:hover {
+  color: var(--green-hover);
+}
+
+.product-card__location {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Product body */
+.product-card__description {
+  /* Flexible description space keeps the price and actions aligned across cards. */
+  padding: 12px 22px 0;
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+  flex-grow: 1;
+}
+
+.product-card__price {
+  padding: 12px 22px 0;
+  margin: 0;
+  font-size: 20px;
+  color: var(--text);
+}
+
+.product-card__unit {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.product-card__availability {
+  padding: 8px 22px 0;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.product-card__availability--available {
+  /* Availability color distinguishes in-season listings from unavailable products. */
+  color: #197a40;
+}
+
+.product-card__availability--unavailable {
+  color: #8a6a1c;
+}
+
+/* Product footer / actions */
+.product-card__footer {
+  /* Keep card actions grouped and anchored after the flexible description. */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 22px 20px;
+  margin-top: auto;
+}
+
+.btn-product-view,
+.btn-farm-view {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-product-view {
+  background: var(--green);
+  color: #ffffff;
+}
+
+.btn-product-view:hover {
+  background: var(--green-hover);
+}
+
+.btn-farm-view {
+  background: transparent;
+  border: 1.5px solid var(--green);
+  color: var(--green);
+}
+
+.btn-farm-view:hover {
+  background: var(--soft);
+}
+
+.btn-contact-farmer {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-contact-farmer:hover {
+  background: var(--soft);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+/* ========================================
+   FARMER PRODUCE LISTING DEMONSTRATION
+   ======================================== */
+.produce-upload-section {
+  /* The standalone upload page reuses the site's section spacing and surfaces. */
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+}
+
+.produce-upload-section [hidden] {
+  /* Keep hidden previews hidden even when product-card display rules also apply. */
+  display: none !important;
+}
+
+.produce-upload-form {
+  /* Keep form controls and preview actions within a comfortable reading width. */
+  display: grid;
+  gap: 22px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.produce-upload-form fieldset {
+  /* Fieldsets group related listing information without adding visual clutter. */
+  min-width: 0;
+  margin: 0;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card-bg);
+}
+
+.produce-upload-form legend {
+  padding: 0 8px;
+  color: var(--green);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.produce-upload-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 18px;
+}
+
+.produce-upload-field {
+  min-width: 0;
+}
+
+.produce-upload-field--wide {
+  grid-column: 1 / -1;
+}
+
+.produce-upload-form label {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.produce-upload-form input,
+.produce-upload-form select,
+.produce-upload-form textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--text);
+  font: inherit;
+}
+
+.produce-upload-form input[type="file"] {
+  padding: 8px;
+}
+
+.produce-upload-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.produce-upload-form input:focus-visible,
+.produce-upload-form select:focus-visible,
+.produce-upload-form textarea:focus-visible {
+  border-color: var(--green);
+}
+
+.produce-upload-help {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.produce-image-preview {
+  max-width: 440px;
+  margin: 18px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.produce-image-preview img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+}
+
+.produce-image-preview figcaption {
+  padding: 8px 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.produce-remove-image,
+.produce-reset-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.produce-remove-image {
+  margin-top: 12px;
+}
+
+.produce-remove-image:hover,
+.produce-reset-button:hover {
+  border-color: var(--green);
+  background: var(--soft);
+}
+
+.produce-upload-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.produce-upload-actions .btn-primary {
+  border: 0;
+  cursor: pointer;
+}
+
+.produce-verification-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 24px auto 0;
+}
+
+.produce-verification-actions .btn-primary {
+  border: 0;
+  cursor: pointer;
+}
+
+.produce-form-message {
+  margin: 0;
+  color: var(--green);
+  font-weight: 600;
+}
+
+.produce-listing-success {
+  max-width: 760px;
+  margin: 18px auto 0;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+  color: var(--green);
+  text-align: center;
+  font-weight: 600;
+}
+
+.produce-form-message:empty {
+  display: none;
+}
+
+.produce-form-message--error {
+  color: #a12c27;
+}
+
+.produce-preview-section {
+  max-width: 900px;
+  margin: 54px auto 0;
+}
+
+.produce-preview-section .offerings-heading {
+  margin-bottom: 22px;
+}
+
+.produce-preview-card {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.produce-preview-card .product-card__price,
+.produce-preview-card .product-card__availability {
+  flex-grow: 0;
+}
+
+/* ========================================
+   CONTACT-FARMER ENQUIRY DIALOG
+   ======================================== */
+#contact-farmer-dialog {
+  /* Constrain the native dialog to a readable width on desktop and phones. */
+  width: min(94vw, 480px);
+  border: none;
+  border-radius: 14px;
+  padding: 0;
+  box-shadow: 0 20px 60px rgba(24, 60, 41, 0.22);
+}
+
+#contact-farmer-dialog::backdrop {
+  /* Dim the page behind the active enquiry dialog. */
+  background: rgba(10, 34, 20, 0.55);
+}
+
+#contact-farmer-dialog > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+#contact-farmer-dialog > header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--text);
+}
+
+#dialog-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+}
+
+#dialog-close:hover {
+  color: var(--text);
+}
+
+.dialog-context {
+  padding: 12px 24px 0;
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+#farmer-enquiry-form {
+  padding: 0 24px 24px;
+}
+
+#farmer-enquiry-form fieldset {
+  /* Remove browser fieldset framing while retaining semantic grouping. */
+  border: none;
+  padding: 16px 0 0;
+  margin: 0;
+}
+
+#farmer-enquiry-form legend {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text);
+  padding: 0;
+  margin-bottom: 12px;
+}
+
+.dialog-footer {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+#dialog-cancel {
+  padding: 12px 20px;
+  background: none;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#dialog-cancel:hover {
+  background: var(--soft);
+}
+
+/* ========================================
+   HOME CARD LINK (added in index.html)
+   ======================================== */
+.home-card-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.home-card-link:hover {
+  color: var(--green-hover);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 620px) {
+  /* Use single-column product cards and full-width actions on narrow screens. */
+  .product-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card__footer {
+    flex-direction: column;
+  }
+
+  .btn-product-view,
+  .btn-farm-view,
+  .btn-contact-farmer {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .produce-preview-card .product-card__footer {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 500px) {
+  /* Reduce page padding and filter button size on the smallest screens. */
+  .products-services-header,
+  .offerings-section {
+    padding-inline: 18px;
+  }
+
+  .products-services-header {
+    padding-top: 56px;
+    padding-bottom: 42px;
+  }
+
+  .offerings-section {
+    padding-block: 52px;
+  }
+
+  .product-filter-list {
+    gap: 6px;
+  }
+
+  .product-filter-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .produce-upload-form fieldset {
+    padding: 16px;
+  }
+
+  .produce-upload-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .produce-upload-field--wide {
+    grid-column: auto;
+  }
+
+  .produce-upload-actions {
+    flex-direction: column;
+  }
+
+  .produce-upload-actions button,
+  .produce-upload-actions a {
+    width: 100%;
+  }
+}

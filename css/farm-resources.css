@@ -1,0 +1,595 @@
+/* ========================================
+   FARM & RESOURCES PAGE STYLESHEET
+   css/farm-resources.css
+   Requires: css/global.css (loaded first)
+   ======================================== */
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+.resources-header {
+  /* Soft gradient emphasizes the page title while preserving existing brand colors. */
+  padding: 68px 24px 52px;
+  margin-bottom: 0;
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(25, 97, 56, 0.1), transparent 68%),
+    linear-gradient(180deg, var(--soft), #ffffff);
+}
+
+.resources-header h1 {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-size: clamp(36px, 5vw, 52px);
+  letter-spacing: -0.035em;
+}
+
+.resources-header > p:last-child {
+  max-width: 720px;
+  font-size: 17px;
+}
+
+.resource-kicker {
+  /* Small consistent label for the local farm and guidance sections. */
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   RESOURCE SECTION LAYOUT
+   ======================================== */
+.resource-section {
+  /* Shared vertical spacing separates the learning topics. */
+  padding: 68px 24px;
+}
+
+.resource-tint {
+  background: var(--card-bg);
+  border-block: 1px solid var(--line);
+}
+
+.resource-heading {
+  /* Limit heading text width and center the introduction above each resource group. */
+  max-width: 780px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.resource-heading h2,
+.resources-contact h2 {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: clamp(25px, 3vw, 32px);
+  letter-spacing: -0.025em;
+}
+
+.resource-heading p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ========================================
+   RESOURCE CARD GRID
+   ======================================== */
+.resource-grid {
+  /* Responsive information cards fill available columns without becoming too narrow. */
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.resource-card {
+  /* Resource cards use the shared surface and a restrained hover lift. */
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid rgba(25, 97, 56, 0.14);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.resource-card h3 {
+  margin: 0 0 10px;
+  color: var(--green);
+  font-size: 19px;
+}
+
+.resource-card p,
+.resource-card li {
+  color: var(--muted);
+}
+
+.resource-card p {
+  margin: 0;
+}
+
+.resource-card ul {
+  margin: 14px 0 0;
+  padding-left: 20px;
+}
+
+.resource-card li + li {
+  margin-top: 7px;
+}
+
+/* ========================================
+   FARM ACTIVITIES LIST
+   ======================================== */
+.activity-list {
+  /* Seasonal tasks form a compact two-column list on wider screens. */
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.activity-list li {
+  padding: 16px 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--text);
+}
+
+/* ========================================
+   FAQ SECTION
+   ======================================== */
+.faq-section {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.faq-section details {
+  /* Each native disclosure is styled as a separate, readable answer panel. */
+  padding: 18px 20px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.faq-section details + details {
+  margin-top: 12px;
+}
+
+.faq-section summary {
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.faq-section details p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+/* ========================================
+   RESOURCES CONTACT CTA
+   ======================================== */
+.resources-contact {
+  /* Close the page with a visually distinct route to ask for further guidance. */
+  padding: 48px 24px;
+  text-align: center;
+  background: var(--soft);
+  border-top: 1px solid var(--line);
+}
+
+.resources-contact p {
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+
+/* ========================================
+   FARM SHOWCASE SECTION
+   ======================================== */
+.farm-showcase-section {
+  /* Group farm profiles on the same soft surface used for featured products. */
+  background: var(--card-bg);
+  border-block: 1px solid var(--line);
+}
+
+.farm-showcase-note {
+  max-width: 760px;
+  margin: 28px auto 0;
+  color: var(--muted);
+  text-align: center;
+  font-size: 15px;
+}
+
+/* ========================================
+   FARM CARD GRID
+   ======================================== */
+.farm-card-grid {
+  /* Farm profiles flow into as many columns as the available width allows. */
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 26px;
+  padding: 0;
+  list-style: none;
+}
+
+/* ========================================
+   FARM CARD COMPONENT
+   ======================================== */
+.farm-card {
+  /* Column flex layout keeps farm actions aligned across cards with different copy. */
+  background: #ffffff;
+  border: 1px solid rgba(25, 97, 56, 0.14);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.farm-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.farm-card--placeholder {
+  /* Dashed border and muted contrast identify a listing awaiting registration. */
+  border-style: dashed;
+  opacity: 0.82;
+}
+
+/* Farm image */
+.farm-card__figure {
+  /* Clip image zoom so it stays within the rounded profile-card edges. */
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--soft);
+}
+
+.farm-card__image {
+  /* Set a consistent photo window for farm and aquaculture listings. */
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.farm-card:hover .farm-card__image {
+  transform: scale(1.035);
+}
+
+.farm-card__figcaption {
+  /* Gradient provides enough contrast for the image caption at its lower edge. */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 14px;
+  background: linear-gradient(transparent, rgba(10, 34, 20, 0.72));
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Farm header */
+.farm-card__header {
+  padding: 19px 22px 0;
+}
+
+.farm-card__name {
+  margin: 0 0 4px;
+  color: var(--text);
+  font-size: 21px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.farm-card__farmer-name {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.farm-card__location {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Farm description */
+.farm-card__description {
+  padding: 12px 22px 0;
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+  flex-grow: 1;
+}
+
+/* Farming category tags */
+.farm-card__categories {
+  /* Category tags wrap as needed without expanding the card width. */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 14px 22px 0;
+  list-style: none;
+  margin: 0;
+}
+
+.farm-card__category-tag {
+  padding: 3px 10px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+/* Products produced by this farm */
+.farm-card__products-preview {
+  /* Separate produced items from the farm description and category tags. */
+  padding: 14px 22px 0;
+}
+
+.farm-card__products-heading {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.farm-card__product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.farm-card__product-list a {
+  font-size: 13px;
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+
+.farm-card__product-list a:hover {
+  color: var(--green-hover);
+}
+
+.farm-card__product-list li:not(:last-child)::after {
+  content: "·";
+  margin-left: 6px;
+  color: var(--muted);
+}
+
+.farm-card__coming-soon {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Farm card actions */
+.farm-card__footer {
+  /* Keep profile, product, and contact actions grouped at the bottom of each card. */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 22px 20px;
+  margin-top: auto;
+}
+
+.btn-farm-profile,
+.btn-farm-products {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-farm-profile {
+  background: var(--green);
+  color: #ffffff;
+}
+
+.btn-farm-profile:hover {
+  background: var(--green-hover);
+}
+
+.btn-farm-products {
+  background: transparent;
+  border: 1.5px solid var(--green);
+  color: var(--green);
+}
+
+.btn-farm-products:hover {
+  background: var(--soft);
+}
+
+/* Contact-farmer button (also used on products page) */
+.btn-contact-farmer {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-contact-farmer:hover {
+  background: var(--soft);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+/* ========================================
+   CONTACT-FARMER ENQUIRY DIALOG
+   ======================================== */
+#contact-farmer-dialog {
+  /* Share the products page's compact dialog width and elevation. */
+  width: min(94vw, 480px);
+  border: none;
+  border-radius: 14px;
+  padding: 0;
+  box-shadow: 0 20px 60px rgba(24, 60, 41, 0.22);
+}
+
+#contact-farmer-dialog::backdrop {
+  background: rgba(10, 34, 20, 0.55);
+}
+
+#contact-farmer-dialog > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+#contact-farmer-dialog > header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--text);
+}
+
+#dialog-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+}
+
+#dialog-close:hover {
+  color: var(--text);
+}
+
+.dialog-context {
+  padding: 12px 24px 0;
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+#farmer-enquiry-form {
+  padding: 0 24px 24px;
+}
+
+#farmer-enquiry-form fieldset {
+  border: none;
+  padding: 16px 0 0;
+  margin: 0;
+}
+
+#farmer-enquiry-form legend {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text);
+  padding: 0;
+  margin-bottom: 12px;
+}
+
+.dialog-footer {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+#dialog-cancel {
+  padding: 12px 20px;
+  background: none;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s ease;
+}
+
+#dialog-cancel:hover {
+  background: var(--soft);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 680px) {
+  /* Stack farm cards and their actions when the grid becomes narrow. */
+  .farm-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .farm-card__footer {
+    flex-direction: column;
+  }
+
+  .btn-farm-profile,
+  .btn-farm-products,
+  .btn-contact-farmer {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .activity-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Reduce section gutters and stack farm activities on phone screens. */
+  .resources-header,
+  .resource-section {
+    padding-inline: 18px;
+  }
+
+  .resources-header {
+    padding-top: 52px;
+    padding-bottom: 40px;
+  }
+
+  .resource-section {
+    padding-block: 50px;
+  }
+
+  .activity-list {
+    grid-template-columns: 1fr;
+  }
+}

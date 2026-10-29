@@ -1,0 +1,499 @@
+/* ==========================================================================
+   AGRO-NEST — ABOUT US PAGE STYLESHEET (css/about.css)
+   Scoped specifically to pages/about.html.
+   Requires: css/global.css (loaded first for variables, base reset & chrome)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. HERO BANNER: "WE BELIEVE IN BETTER AGRICULTURE"
+   -------------------------------------------------------------------------- */
+.about-hero {
+  /* Photo and dark overlay create a readable full-width introduction banner. */
+  min-height: 360px;
+  padding: 80px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--action);
+  background-image: linear-gradient(
+      rgba(10, 34, 20, 0.72),
+      rgba(10, 34, 20, 0.72)
+    ),
+    url("../images/welcome-agronist.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 4px solid var(--focus);
+  color: var(--action-text);
+  margin-bottom: 0;
+}
+
+.about-hero .hero-content {
+  /* Limit the banner copy width so the title remains easy to scan. */
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.about-hero h1 {
+  /* High-contrast uppercase title remains legible over the hero photo. */
+  font-size: clamp(28px, 4.5vw, 46px);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--action-text);
+  margin: 0 0 16px;
+  line-height: 1.25;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.about-hero .hero-subtitle {
+  font-size: clamp(17px, 2.2vw, 22px);
+  font-weight: 400;
+  color: #f0f7f2;
+  margin: 0;
+  line-height: 1.6;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   2. TWO-COLUMN SECTION: FARM IMAGE & OUR STORY
+   -------------------------------------------------------------------------- */
+.about-story-section {
+  padding: 80px 24px;
+  background-color: var(--page);
+}
+
+.story-container,
+.about-story-section {
+  /* Pair the story and image at desktop widths; the media query stacks them. */
+  max-width: var(--content-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* Image column */
+.story-image-col {
+  width: 100%;
+}
+
+.image-frame {
+  /* Fixed aspect ratio and clipping create a consistent crop for farm photography. */
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--soft);
+  aspect-ratio: 4 / 3;
+  margin: 0;
+  padding: 0;
+}
+
+.image-frame::after {
+  /* Non-interactive border sits over the image without intercepting pointer input. */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  border: 1px solid rgba(25, 97, 56, 0.12);
+  pointer-events: none;
+}
+
+.farm-image {
+  /* Fill the frame; a small transition supports the existing hover treatment. */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.image-frame:hover .farm-image {
+  /* Subtle enlargement adds feedback while the frame clips the image bounds. */
+  transform: scale(1.03);
+}
+
+/* Story text column */
+.story-text-col {
+  /* Vertically center the story alongside its image. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.story-kicker {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--focus);
+  margin-bottom: 8px;
+}
+
+.story-text-col h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 800;
+  color: var(--action);
+  letter-spacing: 0.02em;
+  margin: 0 0 20px;
+  line-height: 1.25;
+}
+
+.story-text-col p {
+  color: var(--subtle-text);
+  font-size: 16.5px;
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+
+.btn-learn-more {
+  /* Primary contact link aligns with the story copy rather than stretching full width. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin-top: 12px;
+  padding: 13px 32px;
+  background-color: var(--action);
+  color: var(--action-text);
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-radius: var(--radius);
+  border: 1px solid var(--action);
+  box-shadow: 0 3px 8px rgba(25, 97, 56, 0.22);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-learn-more:hover {
+  background-color: var(--green-hover);
+  border-color: var(--green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(25, 97, 56, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   3. SECTION TITLE HELPERS
+   -------------------------------------------------------------------------- */
+.section-title-wrap {
+  /* Shared title helper centers headings above values and vision content. */
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-title-wrap h2 {
+  font-size: clamp(26px, 3.2vw, 34px);
+  font-weight: 800;
+  color: var(--action);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.title-accent-line {
+  width: 64px;
+  height: 4px;
+  background: var(--focus);
+  margin: 0 auto;
+  border-radius: 2px;
+  border: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. OUR VALUES SECTION: Quality, Trust, Sustainability
+   -------------------------------------------------------------------------- */
+.about-values-section {
+  /* Separate the principles grid from adjacent page sections. */
+  padding: 84px max(24px, calc((100% - var(--content-width)) / 2));
+  background-color: var(--soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.values-container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.values-grid {
+  /* Evenly space value cards in a responsive grid. */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.value-card {
+  /* Center each value and allow its content to flow vertically. */
+  list-style: none;
+  background: var(--page);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 36px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.value-card:hover {
+  /* Existing hover feedback raises the card and emphasizes its border. */
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--focus);
+}
+
+.value-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #e2ede5;
+  color: var(--action);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.value-card:hover .value-icon {
+  background: var(--action);
+  color: var(--action-text);
+}
+
+.value-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 14px;
+  letter-spacing: 0.01em;
+}
+
+.value-card p {
+  color: var(--subtle-text);
+  font-size: 15.5px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. OUR VISION SECTION
+   -------------------------------------------------------------------------- */
+.about-vision-section {
+  /* Center a focused statement of the farm's long-term direction. */
+  padding: 92px 24px;
+  background: var(--page);
+}
+
+.vision-container {
+  /* Constrain the vision copy and keep its decorative accent within the panel. */
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  background: linear-gradient(145deg, #f7faf8, #edf5ef);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 56px 40px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--action), var(--focus));
+}
+
+.vision-container .section-title-wrap {
+  margin-bottom: 28px;
+}
+
+.vision-highlight {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+  color: var(--action);
+  margin: 0 0 18px;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+.vision-body {
+  font-size: 17px;
+  color: var(--subtle-text);
+  line-height: 1.8;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.about-kicker {
+  margin: 0 0 12px;
+  color: #f0d885;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.about-purpose {
+  /* Mission and vision cards sit side by side before stacking on smaller screens. */
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 64px 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.about-purpose article {
+  padding: 30px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.about-purpose h2,
+.about-approach h2,
+.about-team h2 {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-size: 26px;
+}
+
+.about-purpose p,
+.about-approach p,
+.about-team p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.about-values-section .section-title-wrap > p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.values-grid {
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.about-approach {
+  /* Pair the farming approach copy with a supporting image. */
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 72px 24px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-approach .story-kicker {
+  color: var(--green);
+}
+
+.about-approach p + p {
+  margin-top: 14px;
+}
+
+.about-approach .image-frame {
+  width: 100%;
+}
+
+.about-team {
+  /* Center team information and its contact action in a distinct closing section. */
+  padding: 56px 24px;
+  text-align: center;
+  background: var(--soft);
+  border-top: 1px solid var(--line);
+}
+
+.about-team > p {
+  max-width: 720px;
+  margin: 0 auto 22px;
+}
+
+.about-team .btn-learn-more {
+  align-self: auto;
+}
+
+/* --------------------------------------------------------------------------
+   6. RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  /* Stack image/text sections and reduce spacing as the desktop grid narrows. */
+  .story-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story-image-col {
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+
+  .about-story-section,
+  .about-values-section,
+  .about-vision-section {
+    padding: 60px 20px;
+  }
+
+  .about-approach,
+  .about-purpose {
+    padding: 52px 20px;
+  }
+
+  .about-approach {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-purpose {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-container {
+    padding: 40px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Tighten hero and card layouts for phone-sized screens. */
+  .about-hero {
+    min-height: 280px;
+    padding: 56px 16px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .value-card {
+    padding: 28px 20px;
+  }
+
+  .vision-highlight {
+    font-size: 21px;
+  }
+
+  .vision-body {
+    font-size: 15.5px;
+  }
+}

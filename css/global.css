@@ -1,0 +1,422 @@
+/* ==========================================================================
+   AGRO-NEST  — GLOBAL STYLESHEET  (css/global.css)
+   Shared across every page on the site.
+   Load this file first, then the matching page-specific stylesheet.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS & ROOT VARIABLES
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand palette: shared surfaces, text, navigation, actions, and focus colors. */
+  --page:            #ffffff;
+  --text:            #183c29;
+  --muted:           #506357;
+  --subtle-text:     #506357;
+  --green:           #196138;
+  --green-hover:     #134d2c;
+  --action:          #196138;
+  --action-text:     #ffffff;
+  --navigation:      #227443;
+  --navigation-text: #ffffff;
+  --soft:            #eaf2ec;
+  --footer:          #eaf2ec;
+  --line:            #bfd1c3;
+  --focus:           #d4ad46;
+  --card-bg:         #f7faf8;
+
+  /* Shared content widths and rounded corners keep layouts consistent. */
+  --content-width: 1200px;
+  --radius:        8px;
+
+  /* Shared shadows establish a consistent depth for cards and dialogs. */
+  --shadow:    0 4px 12px rgba(24, 60, 41, 0.08);
+  --shadow-lg: 0 10px 30px rgba(24, 60, 41, 0.10);
+
+  /* Site-wide font stack, inherited by page-specific content. */
+  --font: Arial, Helvetica, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   2. CSS RESET & GLOBAL BASE
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Smooth in-page links unless the visitor has requested reduced motion below. */
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+}
+
+img {
+  /* Images remain responsive and do not leave inline baseline gaps. */
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  /* Links inherit surrounding text color and transition common interactive states. */
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+address {
+  font-style: normal;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Accessible focus outlines */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   3. SITE HEADER & BRANDING
+   -------------------------------------------------------------------------- */
+body > header {
+  max-width: var(--content-width);
+  margin: auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  min-height: 76px;
+}
+
+.logo-container {
+  /* Keep the brand mark and name aligned as one flexible header unit. */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.logo-container img {
+  /* Constrain the site mark consistently across page headers. */
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: var(--footer);
+  flex-shrink: 0;
+}
+
+.header-actions {
+  /* Align shortcut links and controls beside the site identity. */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Primary "Get Started" button */
+.header-actions > a {
+  /* Shared button treatment for prominent header actions. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 18px;
+  border: 1px solid var(--action);
+  border-radius: var(--radius);
+  background: var(--action);
+  color: var(--action-text);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.header-actions > a:hover {
+  background: var(--green-hover);
+}
+
+/* --------------------------------------------------------------------------
+   4. PRIMARY NAVIGATION BAR
+   -------------------------------------------------------------------------- */
+body > nav {
+  background: var(--navigation);
+  color: var(--navigation-text);
+}
+
+body > nav ul {
+  /* Center the primary page links while allowing wrapping at narrow widths. */
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  list-style: none;
+}
+
+body > nav a {
+  /* The transparent border reserves space for the active/hover underline. */
+  color: var(--navigation-text);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 4px 6px;
+  border-bottom: 2px solid transparent;
+}
+
+body > nav a:hover,
+body > nav a[aria-current="page"],
+body > nav a[aria-current] {
+  border-bottom-color: var(--focus);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   5. MAIN CONTAINER
+   -------------------------------------------------------------------------- */
+main {
+  /* Keep the main page flow full-width without adding horizontal overflow. */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   6. PAGE HEADER BAND  (standard inner-page hero banner)
+   Used by: products-services and farm-resources.
+   About page overrides this in about.css.
+   -------------------------------------------------------------------------- */
+.page-header {
+  /* Shared inner-page heading band; individual pages can refine the treatment. */
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 40px 24px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-header h1 {
+  font-size: 36px;
+  color: var(--text);
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.page-header p {
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   7. REUSABLE PRIMARY BUTTON
+   -------------------------------------------------------------------------- */
+.btn-primary {
+  /* General-purpose primary link/button used across page-specific sections. */
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--green);
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--green-hover);
+}
+
+/* --------------------------------------------------------------------------
+   8. SHARED FORM BASE
+   Scoped to specific containers to avoid polluting every page.
+   -------------------------------------------------------------------------- */
+
+/* Contact-page wrapper group keeps each label and control together. */
+.form-group {
+  /* Stack each label and control with consistent spacing. */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+  /* Match text fields across contact and older checkout layouts. */
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--text);
+  background: #ffffff;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  /* Focus ring communicates which form control is currently active. */
+  border-color: var(--green);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(25, 97, 56, 0.15);
+}
+
+/* Generic submit button */
+button[type="submit"] {
+  /* Shared submit control; page-specific classes may refine its width or label. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 26px;
+  background: var(--green);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+button[type="submit"]:hover {
+  background: var(--green-hover);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   9. FOOTER  (all pages)
+   -------------------------------------------------------------------------- */
+body > footer,
+footer {
+  /* Footer columns reuse the shared content width and site background palette. */
+  border-top: 1px solid var(--line);
+  background: var(--footer);
+  color: var(--text);
+  padding: 48px max(24px, calc((100% - var(--content-width)) / 2)) 32px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr 1fr 1.2fr;
+  gap: 36px;
+}
+
+.footer-col h3 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  color: var(--text);
+}
+
+.footer-col p,
+.footer-col ul,
+.footer-col address {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  font-style: normal;
+  color: var(--muted);
+}
+
+.footer-col li,
+.footer-col address p {
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  color: var(--muted);
+}
+
+.footer-col a:hover {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   10. RESPONSIVE MEDIA QUERIES — shared / cross-page rules
+   -------------------------------------------------------------------------- */
+
+/* Tablets: collapse footer to two columns */
+@media (max-width: 900px) {
+  /* Reduce footer columns on medium screens so labels and links have room. */
+  body > footer,
+  footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 600px) {
+  /* Stack header actions and tighten navigation spacing for phones. */
+  body > header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header-actions {
+    justify-content: space-between;
+  }
+
+  body > nav ul {
+    gap: 8px 16px;
+  }
+
+  .page-header h1 {
+    font-size: 28px;
+  }
+}
+
+/* Small phones: stack footer columns */
+@media (max-width: 500px) {
+  /* Use one footer column when the viewport is especially narrow. */
+  body > footer,
+  footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  /* Remove non-essential smooth scrolling and transitions for motion-sensitive users. */
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

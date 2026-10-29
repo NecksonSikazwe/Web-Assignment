@@ -1,0 +1,151 @@
+/* Login page styles use the shared AgroNest colours and typography. */
+.login-main {
+  /* Match the registration surface while keeping the shared header and footer unchanged. */
+  padding: 48px 20px 64px;
+  background:
+    radial-gradient(ellipse at top, rgba(234, 242, 236, 0.75), transparent 58%),
+    var(--page);
+}
+
+.login-card {
+  /* A narrower fixed maximum keeps both farmer and administrator forms aligned. */
+  width: min(100%, 520px);
+  margin: 0 auto;
+  padding: 38px 42px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow-lg);
+}
+
+.login-heading {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.login-kicker {
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.login-heading h1 {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: clamp(25px, 5vw, 32px);
+  line-height: 1.2;
+}
+
+.login-heading > p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+.login-form {
+  display: grid;
+  gap: 20px;
+}
+
+.login-field {
+  /* Grid spacing aligns the explicit label and its input as one form field. */
+  display: grid;
+  gap: 7px;
+  margin: 0;
+}
+
+.login-field > label {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.login-field input {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-field input:focus {
+  border-color: var(--green);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(25, 97, 56, 0.15);
+}
+
+.login-submit {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.login-registration-note {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+.login-registration-note a {
+  color: var(--green);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.login-registration-note a:hover {
+  color: var(--green-hover);
+}
+
+.login-response {
+  width: min(100% - 40px, 640px);
+  margin: 56px auto;
+  padding: 36px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.login-response h1 {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-size: clamp(25px, 5vw, 32px);
+  line-height: 1.2;
+}
+
+.login-response p {
+  color: var(--muted);
+}
+
+.login-response .login-error {
+  color: #7e2222;
+}
+
+.login-response form {
+  margin-top: 24px;
+}
+
+@media (max-width: 600px) {
+  /* Use compact card spacing on small screens without changing the form order. */
+  .login-main {
+    padding: 28px 14px 40px;
+  }
+
+  .login-card {
+    padding: 28px 20px;
+  }
+
+  .login-response {
+    width: calc(100% - 28px);
+    margin: 32px auto;
+    padding: 28px 20px;
+  }
+}

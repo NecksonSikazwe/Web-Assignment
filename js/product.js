@@ -1,0 +1,1 @@
+/* Product filtering and farmer enquiries currently use the shared script.js file. */

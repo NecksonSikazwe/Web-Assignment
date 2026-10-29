@@ -1,0 +1,223 @@
+/* Registration page styles; shared colours and typography come from global.css. */
+.registration-main {
+  /* Soft background separates the focused account form from the shared site header. */
+  padding: 48px 20px 64px;
+  background:
+    radial-gradient(ellipse at top, rgba(234, 242, 236, 0.75), transparent 58%),
+    var(--page);
+}
+
+.registration-card {
+  /* Constrain form width so labels and validation messages stay easy to scan. */
+  width: min(100%, 560px);
+  margin: 0 auto;
+  padding: 38px 42px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow-lg);
+}
+
+.registration-heading {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.registration-kicker {
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.registration-heading h1 {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: clamp(25px, 5vw, 32px);
+  line-height: 1.2;
+}
+
+.registration-heading > p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+.registration-form {
+  display: grid;
+  gap: 18px;
+}
+
+.registration-field {
+  /* Each paragraph lays out one explicitly labeled control and its accessible hints. */
+  display: grid;
+  gap: 7px;
+  margin: 0;
+}
+
+.registration-field > label {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.registration-field input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 13px;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.registration-field input:focus {
+  border-color: var(--green);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(25, 97, 56, 0.15);
+}
+
+.registration-field input[aria-invalid="true"] {
+  border-color: #a52c2c;
+}
+
+.password-control {
+  /* Keep the reveal button adjacent to its password input at every viewport size. */
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.password-control input {
+  flex: 1;
+}
+
+.password-toggle {
+  min-width: 62px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.password-toggle:hover {
+  background: var(--soft);
+}
+
+.field-hint {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.field-error {
+  color: #8d2020;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.registration-form-message {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #fff3f1;
+  color: #7e2222;
+}
+
+.registration-submit {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.registration-login-note {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+.registration-response {
+  width: min(100% - 40px, 640px);
+  margin: 56px auto;
+  padding: 36px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.registration-response h1 {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-size: clamp(25px, 5vw, 32px);
+  line-height: 1.2;
+}
+
+.registration-response p {
+  color: var(--muted);
+}
+
+.registration-response .response-error {
+  color: #7e2222;
+}
+
+.registration-response .response-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.registration-response .response-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid var(--green);
+  border-radius: 6px;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.registration-response .response-actions a:first-child {
+  background: var(--green);
+  color: #ffffff;
+}
+
+.registration-response .response-actions a:first-child:hover {
+  background: var(--green-hover);
+}
+
+.registration-response .response-actions a:not(:first-child):hover {
+  background: var(--soft);
+}
+
+@media (max-width: 600px) {
+  /* Reduce card padding on phones while preserving the same single-column form. */
+  .registration-main {
+    padding: 28px 14px 40px;
+  }
+
+  .registration-card {
+    padding: 28px 20px;
+  }
+
+  .registration-heading {
+    margin-bottom: 24px;
+  }
+
+  .registration-response {
+    width: calc(100% - 28px);
+    margin: 32px auto;
+    padding: 28px 20px;
+  }
+}

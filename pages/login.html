@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- This lightweight entry page forwards visitors to the existing PHP farmer login. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0; url=../farmer/login.php">
+    <title>Farmer Login | AgroNest</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body class="login-page">
+    <!-- Keep the same public brand and navigation while the login route loads. -->
+    <header>
+        <a href="../index.html" class="logo-container" aria-label="AgroNest home">
+            <img src="../images/logo.png" alt="" width="40" height="40">
+            <span>AgroNest</span>
+        </a>
+        <nav class="header-actions" aria-label="Quick actions">
+            <a href="products-services.html">Explore our farm</a>
+        </nav>
+    </header>
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="../marketplace.php">Marketplace</a></li>
+            <li><a href="products-services.html">Products &amp; Services</a></li>
+            <li><a href="farm-resources.html">Farm &amp; Resources</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="../farmer/login.php" aria-current="page">Farmer login</a></li>
+        </ul>
+    </nav>
+    <!-- The fallback link remains usable when automatic navigation is unavailable. -->
+    <main class="login-main">
+        <section class="login-card" aria-labelledby="login-heading">
+            <h1 id="login-heading">Farmer login</h1>
+            <p>This secure login page is loading. If it does not open automatically, continue to the
+                <a href="../farmer/login.php">AgroNest farmer login</a>.</p>
+        </section>
+    </main>
+</body>
+
+</html>

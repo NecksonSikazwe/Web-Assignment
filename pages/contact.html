@@ -2,113 +2,153 @@
 <html lang="en">
 
 <head>
+    <!-- Page metadata and stylesheets connect this form to the shared site design. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Agro-nest</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Contact Us | AgroNest</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/contact.css">
 </head>
 
 <body>
 
-    <!-- Top Header / Branding & Actions -->
+    <!-- Site branding and shortcut to the existing product and service listings. -->
     <header>
-        <div class="logo-container">
-            <a href="../index.html">
-                <img src="../images/logo.png" alt="Agro-nest Logo" width="40" height="40">
-                <span>Agro-nest</span>
-            </a>
-        </div>
+        <a href="../index.html" class="logo-container" aria-label="AgroNest home">
+            <img src="../images/logo.png" alt="" width="40" height="40">
+            <span>AgroNest</span>
+        </a>
 
-        <div class="header-actions">
-            <a href="products.html">Get Started</a>
-            <a href="cart.html" aria-label="Shopping Cart">Cart</a>
-            <button type="button" aria-label="More Options">&#8942;</button>
-        </div>
+        <nav class="header-actions" aria-label="User Actions">
+            <a href="products-services.html">Explore Products &amp; Services</a>
+        </nav>
     </header>
 
-    <!-- Navigation Bar -->
+    <!-- Primary navigation links back to the existing site pages. -->
     <nav aria-label="Main Navigation">
         <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="../marketplace.php">Marketplace</a></li>
+            <li><a href="products-services.html">Products &amp; Services</a></li>
+            <li><a href="farm-resources.html">Farm &amp; Resources</a></li>
+            <li><a href="contact.html" aria-current="page">Contact Us</a></li>
+            <li><a href="../farmer/login.php">Farmer login</a></li>
         </ul>
     </nav>
 
-    <!-- Main Content Area -->
+    <!-- Main area groups contact details, the enquiry form, and location information. -->
     <main>
-        <section class="page-header">
-            <h1>Contact Us</h1>
-            <p>Get in touch with Agro-nest for inquiries, consultations, or orders.</p>
+        <section class="contact-card" aria-labelledby="contact-heading">
+            <header class="contact-card-header">
+                <h1 id="contact-heading">Contact AgroNest</h1>
+                <p>Questions about our farm, products or services? We would be glad to hear from you.</p>
+            </header>
+
+            <!-- Direct contact details let visitors choose phone, email, or location. -->
+            <aside class="contact-info-col" aria-label="Contact Information">
+                <h2>Contact information</h2>
+                <ul class="contact-details-list">
+                    <li class="contact-detail-item">
+                        <span class="contact-icon" aria-hidden="true">📍</span>
+                        <address class="contact-detail-body">
+                            <strong>Location</strong>
+                            <p>Ndola, Copperbelt Province, Zambia</p>
+                        </address>
+                    </li>
+                    <li class="contact-detail-item">
+                        <span class="contact-icon" aria-hidden="true">📞</span>
+                        <address class="contact-detail-body">
+                            <strong>Phone</strong>
+                            <p><a href="tel:+260970000000">+260 970 000 000</a></p>
+                        </address>
+                    </li>
+                    <li class="contact-detail-item">
+                        <span class="contact-icon" aria-hidden="true">✉</span>
+                        <address class="contact-detail-body">
+                            <strong>Email</strong>
+                            <p><a href="mailto:info@agronest.com">info@agronest.com</a></p>
+                        </address>
+                    </li>
+                    <li class="contact-detail-item">
+                        <span class="contact-icon" aria-hidden="true">◷</span>
+                        <p class="contact-detail-body">
+                            <strong>Working hours</strong>
+                            <span>Monday–Friday, 08:00–17:00</span>
+                        </p>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- The enquiry form uses associated labels and native input types. -->
+            <section class="contact-form-col" aria-label="Send Message Form">
+                <h2>Send an enquiry</h2>
+                <form id="contact-form" action="#" method="post">
+                    <!-- Personal contact fields and message text for the visitor's enquiry. -->
+                    <p class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required
+                            autocomplete="name">
+                    </p>
+                    <p class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required
+                            autocomplete="email">
+                    </p>
+                    <p class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    </p>
+                    <!-- Submit control retains the form's existing native behavior. -->
+                    <button type="submit" class="btn-send-message">SEND MESSAGE</button>
+                </form>
+            </section>
         </section>
 
-        <section class="contact-section">
-            <form action="#" method="post">
-                <div>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
+        <!-- Location panel identifies AgroNest's area; the graphic is a placeholder. -->
+        <section class="contact-map" aria-labelledby="map-heading">
+            <h2 id="map-heading">Find us in Ndola</h2>
+            <figure class="map-placeholder"
+                aria-label="Map placeholder for AgroNest in Ndola, Copperbelt Province, Zambia">
+                <span class="map-marker" aria-hidden="true">●</span>
+                <figcaption>Ndola, Copperbelt Province, Zambia</figcaption>
+                <p class="map-caption">Map location placeholder</p>
+            </figure>
         </section>
     </main>
 
-    <!-- Footer Section -->
+    <!-- Shared footer repeats contact details and navigation for convenience. -->
     <footer>
-        <div class="footer-columns">
+        <section class="footer-col">
+            <h3>Stay connected</h3>
+            <p>Our official social media profiles are not available yet. Contact us by phone or email for updates.</p>
+        </section>
 
-            <section class="footer-col">
-                <h3>Social Media Platform</h3>
-                <p>Connect with us on our official social channels for updates and tips.</p>
-                <ul class="social-links">
-                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
-                    <li><a href="#" aria-label="Twitter">Twitter</a></li>
-                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
-                    <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
-                </ul>
-            </section>
+        <nav class="footer-col" aria-label="Quick Links Navigation">
+            <h3>Explore AgroNest</h3>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products-services.html">Products &amp; Services</a></li>
+                <li><a href="farm-resources.html">Farm &amp; Resources</a></li>
+                <li><a href="contact.html" aria-current="page">Contact Us</a></li>
+            </ul>
+        </nav>
 
-            <nav class="footer-col" aria-label="Quick Links Navigation">
-                <h3>Quick links</h3>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+        <section class="footer-col">
+            <h3>Contact Us</h3>
+            <address>
+                <p>Phone: <a href="tel:+260970000000">+260 970 000 000</a></p>
+                <p>Email: <a href="mailto:info@agronest.com">info@agronest.com</a></p>
+                <p>Location: Ndola, Copperbelt Province, Zambia</p>
+            </address>
+        </section>
 
-            <nav class="footer-col" aria-label="Services Navigation">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="services.html#crop-farming">Crop Farming</a></li>
-                    <li><a href="services.html#poultry-farming">Poultry Farming</a></li>
-                    <li><a href="services.html#fish-farming">Fish Farming</a></li>
-                    <li><a href="services.html#advisory">Farming Advisory</a></li>
-                </ul>
-            </nav>
-
-            <section class="footer-col">
-                <h3>Contact Us</h3>
-                <address>
-                    <p>Phone: +260 970 000 000</p>
-                    <p>Email: info@samsgardens.com</p>
-                    <p>Location: Ndola, Zambia</p>
-                </address>
-            </section>
-
-        </div>
+        <section class="footer-col">
+            <h3>Working hours</h3>
+            <p>Monday–Friday</p>
+            <p>08:00–17:00</p>
+        </section>
     </footer>
 
 </body>

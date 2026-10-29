@@ -2,149 +2,259 @@
 <html lang="en">
 
 <head>
+    <!-- Document metadata and page title identify the homepage in browsers and search results. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrone-nest</title>
+    <meta name="description"
+        content="Meet AgroNest in Ndola, Zambia: integrated crop and livestock production, practical farm services, training and organic manure.">
+    <title>AgroNest | Growing Food. Building Futures.</title>
+    <!-- Shared design rules load before the homepage-specific styles. -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
-
-    <!-- Top Header / Branding & Actions -->
+    <!-- Brand header and quick action are shared across the site. -->
     <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="Agro-nest logo" width="40" height="40">
-            <span>logo</span>
-        </div>
-
-        <div class="header-actions">
-            <a href="pages/products.html">Get Started</a>
-            <button type="button" aria-label="More Options">&#8942;</button>
-        </div>
+        <a href="index.html" class="logo-container" aria-label="AgroNest home">
+            <img src="images/logo.png" alt="" width="40" height="40">
+            <span>AgroNest</span>
+        </a>
+        <nav class="header-actions" aria-label="Quick actions">
+            <a href="pages/products-services.html">Explore our farm</a>
+            <a href="pages/register.html">Farmer registration</a>
+        </nav>
     </header>
 
-    <!-- Navigation Bar -->
+    <!-- Primary site navigation links to the existing pages. -->
     <nav aria-label="Main Navigation">
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" aria-current="page">Home</a></li>
             <li><a href="pages/about.html">About Us</a></li>
-            <li><a href="pages/services.html">Services</a></li>
-            <li><a href="pages/products.html">Products</a></li>
-            <li><a href="pages/resources.html">Resources</a></li>
-            <li><a href="pages/contact.html">Contact</a></li>
+            <li><a href="marketplace.php">Marketplace</a></li>
+            <li><a href="pages/products-services.html">Products &amp; Services</a></li>
+            <li><a href="pages/farm-resources.html">Farm &amp; Resources</a></li>
+            <li><a href="pages/contact.html">Contact Us</a></li>
+            <li><a href="farmer/login.php">Farmer login</a></li>
         </ul>
     </nav>
 
-    <!-- Main Content Area -->
     <main>
+        <!-- Featured slider sits immediately below navigation; the original hero remains slide one. -->
+        <section class="home-slider" aria-label="Featured AgroNest services and offerings">
+            <!-- Original homepage hero: its existing content, image, button, and styles are preserved. -->
+            <section class="home-hero" aria-labelledby="home-heading">
+                <img src="images/welcome-agronist.jpg"
+                    alt="Farm landscape representing AgroNest's agricultural work in Ndola" fetchpriority="high">
+                <header class="home-hero-content">
+                    <p class="home-kicker">AgroNest · Ndola, Copperbelt Province</p>
+                    <h1 id="home-heading">Growing Food.<br>Building Futures.</h1>
+                    <p>Integrated crop and livestock farming, practical agricultural services and knowledge for a stronger
+                        local food system.</p>
+                    <a class="btn-primary" href="marketplace.php">Browse available products</a>
+                    <a class="btn-primary" href="pages/products-services.html">Discover our products and services</a>
+                </header>
+            </section>
 
-        <!-- Agronist Agricultural Slider Structure -->
-        <section class="slider-section" aria-label="Agronist Agricultural Image Slider">
-            <div class="slider-wrapper">
+            <!-- Crop slide introduces crop production and links to the services section. -->
+            <section class="home-hero home-slider-slide" aria-labelledby="crop-slide-heading" hidden>
+                <img src="images/crop-farming.jpg"
+                    alt="A farmer tending crops in a cultivated field" loading="lazy">
+                <header class="home-hero-content">
+                    <p class="home-kicker">Grow with AgroNest</p>
+                    <h2 id="crop-slide-heading">Crop Farming</h2>
+                    <p>Explore crop production and practical agricultural opportunities for a stronger, more productive
+                        local food system.</p>
+                    <a class="btn-primary" href="pages/products-services.html#farm-services">Explore Services</a>
+                </header>
+            </section>
 
-                <!-- Slide 1: Welcome to Agronist -->
-                <article class="slide">
-                    <img src="images/welcome-agronist.jpg" alt="Agricultural landscape showcasing Welcome to Agronist">
-                    <div class="slide-overlay">
-                        <h2>Welcome to Agro-nest</h2>
-                        <p>Connecting people with agriculture and providing sustainable farming solutions.</p>
-                    </div>
-                </article>
+            <!-- Poultry slide highlights livestock production and related support. -->
+            <section class="home-hero home-slider-slide" aria-labelledby="poultry-slide-heading" hidden>
+                <img src="images/poultry-farming.jpg"
+                    alt="Healthy chickens in a well-managed poultry house" loading="lazy">
+                <header class="home-hero-content">
+                    <p class="home-kicker">Responsible livestock production</p>
+                    <h2 id="poultry-slide-heading">Poultry Farming</h2>
+                    <p>Discover poultry production and hands-on farming support for healthy flocks and reliable local
+                        food.</p>
+                    <a class="btn-primary" href="pages/products-services.html#farm-services">Explore Services</a>
+                </header>
+            </section>
 
-                <!-- Slide 2: Crop Farming -->
-                <article class="slide">
-                    <img src="images/crop-farming.jpg" alt="Vibrant crop farming field with healthy crops">
-                    <div class="slide-overlay">
-                        <h2>Crop Farming</h2>
-                        <p>Growing food for the future with high-yield crops and sustainable soil management.</p>
-                    </div>
-                </article>
+            <!-- Aquaculture slide presents fish farming as another production opportunity. -->
+            <section class="home-hero home-slider-slide" aria-labelledby="fish-slide-heading" hidden>
+                <img src="images/fish-farming.jpg"
+                    alt="Fish being raised in a managed aquaculture pond" loading="lazy">
+                <header class="home-hero-content">
+                    <p class="home-kicker">Aquaculture opportunities</p>
+                    <h2 id="fish-slide-heading">Fish Farming</h2>
+                    <p>Learn about fish production and aquaculture as a practical way to diversify farm output and
+                        support local food supply.</p>
+                    <a class="btn-primary" href="pages/products-services.html#farm-services">Explore Services</a>
+                </header>
+            </section>
 
-                <!-- Slide 3: Poultry Farming -->
-                <article class="slide">
-                    <img src="images/poultry-farming.jpg" alt="Modern poultry farming facility with healthy flock">
-                    <div class="slide-overlay">
-                        <h2>Poultry Farming</h2>
-                        <p>Supporting poultry production with modern chicken rearing and quality egg management.</p>
-                    </div>
-                </article>
+            <!-- Produce slide links visitors to the existing agricultural product listings. -->
+            <section class="home-hero home-slider-slide" aria-labelledby="products-slide-heading" hidden>
+                <img src="images/vegetables.jpg"
+                    alt="Fresh agricultural produce including tomatoes and leafy vegetables" loading="lazy">
+                <header class="home-hero-content">
+                    <p class="home-kicker">Fresh from local farms</p>
+                    <h2 id="products-slide-heading">Discover Agricultural Products</h2>
+                    <p>Explore agricultural products from AgroNest and discover fresh produce grown with care in the
+                        Copperbelt.</p>
+                    <a class="btn-primary" href="pages/products-services.html#featured-products">Explore Products</a>
+                </header>
+            </section>
 
-                <!-- Slide 4: Fish Farming -->
-                <article class="slide">
-                    <img src="images/fish-farming.jpg" alt="Aquaculture fish farming pond with fresh water fish">
-                    <div class="slide-overlay">
-                        <h2>Fish Farming</h2>
-                        <p>Supporting aquaculture with modern freshwater fish production and pond management.</p>
-                    </div>
-                </article>
+            <!-- Farm slide directs visitors to the existing farm and farmer showcase. -->
+            <section class="home-hero home-slider-slide" aria-labelledby="farms-slide-heading" hidden>
+                <img src="images/welcome-agronist.jpg"
+                    alt="A broad view across productive green farmland" loading="lazy">
+                <header class="home-hero-content">
+                    <p class="home-kicker">People and farms growing together</p>
+                    <h2 id="farms-slide-heading">Discover Our Farms</h2>
+                    <p>Meet local farms, discover what they produce, and connect with the people behind agricultural
+                        production.</p>
+                    <a class="btn-primary" href="pages/farm-resources.html#farm-showcase">Explore Farms</a>
+                </header>
+            </section>
 
-            </div>
-
-            <!-- Slider Navigation Controls (For future CSS/JS implementation) -->
-            <button type="button" class="slider-control prev" aria-label="Previous Slide">&lt;</button>
-            <button type="button" class="slider-control next" aria-label="Next Slide">&gt;</button>
-
-            <!-- Slider Pagination Indicators (For future CSS/JS implementation) -->
-            <nav class="slider-dots" aria-label="Slider Page Navigation">
-                <button type="button" class="dot" aria-label="Go to Slide 1"></button>
-                <button type="button" class="dot" aria-label="Go to Slide 2"></button>
-                <button type="button" class="dot" aria-label="Go to Slide 3"></button>
-                <button type="button" class="dot" aria-label="Go to Slide 4"></button>
+            <!-- Arrow buttons and dots provide keyboard- and pointer-accessible slide selection. -->
+            <nav class="home-slider-controls" aria-label="Featured slide controls" hidden>
+                <button class="home-slider-arrow" type="button" data-slide-previous aria-label="Previous slide">
+                    &#8592;
+                </button>
+                <ul class="home-slider-dots" aria-label="Choose a slide">
+                    <li><button type="button" data-slide-to="0" aria-label="Show slide 1" aria-current="true"></button></li>
+                    <li><button type="button" data-slide-to="1" aria-label="Show slide 2"></button></li>
+                    <li><button type="button" data-slide-to="2" aria-label="Show slide 3"></button></li>
+                    <li><button type="button" data-slide-to="3" aria-label="Show slide 4"></button></li>
+                    <li><button type="button" data-slide-to="4" aria-label="Show slide 5"></button></li>
+                    <li><button type="button" data-slide-to="5" aria-label="Show slide 6"></button></li>
+                </ul>
+                <button class="home-slider-arrow" type="button" data-slide-next aria-label="Next slide">
+                    &#8594;
+                </button>
             </nav>
+            <p class="home-slider-status" aria-live="polite" aria-atomic="true" hidden></p>
         </section>
 
+        <!-- Introductory section explains AgroNest's community focus. -->
+        <section class="home-section" aria-labelledby="intro-heading">
+            <header class="home-section-heading">
+                <p class="home-kicker">Rooted in our community</p>
+                <h2 id="intro-heading">Agriculture that connects people and opportunity</h2>
+                <p>AgroNest brings together farm production, practical learning and agricultural support for farmers,
+                    households, traders, institutions, restaurants and partners.</p>
+            </header>
+        </section>
+
+        <!-- Existing crop and livestock highlights link to the product listings. -->
+        <section class="home-section home-tint" aria-labelledby="products-heading">
+            <header class="home-section-heading">
+                <p class="home-kicker">From our farm</p>
+                <h2 id="products-heading">Crops and livestock</h2>
+                <p>Explore our integrated farm focus, from staple and horticultural crops to poultry and goats.</p>
+            </header>
+            <ul class="home-card-grid">
+                <li class="home-card"
+                    data-category="crops">
+                    <img src="images/crop-farming.jpg" alt="Healthy crops growing in a cultivated field" loading="lazy">
+                    <section>
+                        <h3>Crop production</h3>
+                        <p>Maize, soybeans, rape and tomatoes, supported by careful crop planning and soil stewardship.</p>
+                        <a href="pages/products-services.html#featured-products" class="home-card-link">Browse crop products &rarr;</a>
+                    </section>
+                </li>
+                <li class="home-card"
+                    data-category="livestock">
+                    <img src="images/poultry-farming.jpg" alt="Healthy chickens in a poultry production setting"
+                        loading="lazy">
+                    <section>
+                        <h3>Livestock production</h3>
+                        <p>Broilers, eggs and goats as part of a diversified approach to local food production.</p>
+                        <a href="pages/products-services.html#featured-products" class="home-card-link">Browse livestock products &rarr;</a>
+                    </section>
+                </li>
+            </ul>
+            <p class="home-link-row"><a href="pages/products-services.html">View all products and services &rarr;</a></p>
+        </section>
+
+        <!-- Summary of practical support services available from AgroNest. -->
+        <section class="home-section" aria-labelledby="services-heading">
+            <header class="home-section-heading">
+                <p class="home-kicker">Practical farm support</p>
+                <h2 id="services-heading">Services that help farms grow</h2>
+            </header>
+            <ul class="home-service-list">
+                <li><strong>Advisory</strong><span>Farm planning and practical production guidance.</span></li>
+                <li><strong>Training</strong><span>Knowledge sharing for sustainable crop and livestock practices.</span></li>
+                <li><strong>Farm information</strong><span>Accessible resources, tips and answers to common questions.</span></li>
+                <li><strong>Organic manure</strong><span>A nutrient-recycling option for improving soil health.</span></li>
+            </ul>
+            <p class="home-link-row"><a href="pages/products-services.html#farm-services">Explore our services &rarr;</a></p>
+        </section>
+
+        <!-- Highlights the principles behind the farm's work. -->
+        <section class="home-section home-tint" aria-labelledby="why-heading">
+            <header class="home-section-heading">
+                <p class="home-kicker">Our approach</p>
+                <h2 id="why-heading">Why AgroNest</h2>
+            </header>
+            <ul class="home-reasons">
+                <li><h3>Locally grounded</h3><p>Based in Ndola, we focus on the needs and opportunities of our
+                    Copperbelt community.</p></li>
+                <li><h3>Integrated thinking</h3><p>We connect crops, livestock, soil care and practical learning in
+                    one farm approach.</p></li>
+                <li><h3>Built on shared growth</h3><p>We aim to strengthen the relationships between producers,
+                    buyers and agricultural partners.</p></li>
+            </ul>
+        </section>
+
+        <!-- Final homepage call to action links to farm resources. -->
+        <section class="home-section latest-section" aria-labelledby="latest-heading">
+            <header>
+                <p class="home-kicker">Keep learning</p>
+                <h2 id="latest-heading">Latest farm information</h2>
+                <p>Read practical guidance on crop production, livestock management, irrigation and sustainable farming.
+                </p>
+            </header>
+            <a class="btn-primary" href="pages/farm-resources.html">Browse farm resources</a>
+        </section>
     </main>
 
-    <!-- Footer Section -->
+    <!-- Shared footer keeps the site's contact details and navigation available. -->
     <footer>
-        <div class="footer-columns">
-
-            <!-- Column 1: Social Media Platform -->
-            <section class="footer-col">
-                <h3>Social Media Platform</h3>
-                <p>Connect with us on our official social channels for updates and tips.</p>
-                <ul class="social-links">
-                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
-                    <li><a href="#" aria-label="Twitter">Twitter</a></li>
-                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
-                    <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
-                </ul>
-            </section>
-
-            <!-- Column 2: Quick Links -->
-            <nav class="footer-col" aria-label="Quick Links Navigation">
-                <h3>Quick links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pages/about.html">About Us</a></li>
-                    <li><a href="pages/services.html">Services</a></li>
-                    <li><a href="pages/contact.html">Contact</a></li>
-                </ul>
-            </nav>
-
-            <!-- Column 3: Services -->
-            <nav class="footer-col" aria-label="Services Navigation">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="pages/services.html#crop-farming">Crop Farming</a></li>
-                    <li><a href="pages/services.html#poultry-farming">Poultry Farming</a></li>
-                    <li><a href="pages/services.html#fish-farming">Fish Farming</a></li>
-                    <li><a href="pages/services.html#advisory">Farming Advisory</a></li>
-                </ul>
-            </nav>
-
-            <!-- Column 4: Contact Us -->
-            <section class="footer-col">
-                <h3>Contact Us</h3>
-                <address>
-                    <p>Phone: +260 970 000 000</p>
-                    <p>Email: info@samsgardens.com</p>
-                    <p>Location: Ndola, Zambia</p>
-                </address>
-            </section>
-
-        </div>
+        <section class="footer-col">
+            <h3>AgroNest</h3>
+            <p>Growing Food. Building Futures.</p>
+            <p>Integrated farming and practical agricultural support in Ndola, Zambia.</p>
+        </section>
+        <nav class="footer-col" aria-label="Explore AgroNest">
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/about.html">About Us</a></li>
+                <li><a href="marketplace.php">Marketplace</a></li>
+                <li><a href="pages/products-services.html">Products &amp; Services</a></li>
+                <li><a href="pages/farm-resources.html">Farm &amp; Resources</a></li>
+                <li><a href="pages/contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <section class="footer-col">
+            <h3>Contact</h3>
+            <address>
+                <p><a href="tel:+260970000000">+260 970 000 000</a></p>
+                <p><a href="mailto:info@agronest.com">info@agronest.com</a></p>
+                <p>Ndola, Copperbelt Province, Zambia</p>
+            </address>
+        </section>
     </footer>
-
+    <!-- Existing site interactions load separately from the homepage slider behavior. -->
+    <script src="js/script.js"></script>
+    <script src="js/home-slider.js"></script>
 </body>
 
 </html>

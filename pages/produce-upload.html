@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Page metadata and shared/page-specific styles keep this feature within Agronest's design. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prepare and review a temporary produce listing for AgroNest.">
+    <title>Sell Your Produce | AgroNest</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/products-services.css">
+</head>
+
+<body>
+    <!-- Shared brand header and site navigation keep this page connected to Agronest. -->
+    <header>
+        <a href="../index.html" class="logo-container" aria-label="AgroNest home">
+            <img src="../images/logo.png" alt="" width="40" height="40">
+            <span>AgroNest</span>
+        </a>
+        <nav class="header-actions" aria-label="Quick actions">
+            <a href="contact.html">Contact us</a>
+        </nav>
+    </header>
+
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="../marketplace.php">Marketplace</a></li>
+            <li><a href="products-services.html" aria-current="page">Products &amp; Services</a></li>
+            <li><a href="farm-resources.html">Farm &amp; Resources</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="../farmer/login.php">Farmer login</a></li>
+        </ul>
+    </nav>
+
+    <!-- This standalone page gathers produce information and reviews it before confirmation. -->
+    <main>
+        <header class="page-header products-services-header">
+            <p class="products-kicker">For local farmers</p>
+            <h1>Sell Your Produce</h1>
+            <p>Prepare a produce listing, check its details, and confirm before adding a temporary card to the
+                Products &amp; Services page. This demonstration does not publish to a shared marketplace.</p>
+        </header>
+
+        <!-- Farmers enter listing information and select a local image in this form. -->
+        <section class="offerings-section produce-upload-section" id="produce-listing"
+            aria-labelledby="produce-upload-heading">
+            <header class="offerings-heading">
+                <h2 id="produce-upload-heading">Produce information</h2>
+                <p>All fields are required. Farmer details are displayed as entered and do not verify registration.</p>
+            </header>
+
+            <form class="produce-upload-form" id="produce-form" novalidate>
+                <!-- Produce details describe the item, quantity, asking price, and availability. -->
+                <fieldset>
+                    <legend>Produce information</legend>
+                    <section class="produce-upload-fields" aria-label="Produce details">
+                        <p class="form-group produce-upload-field">
+                            <label for="produce-name">Produce name</label>
+                            <input id="produce-name" name="produceName" type="text"
+                                placeholder="For example, tomatoes" maxlength="80" required>
+                        </p>
+                        <p class="form-group produce-upload-field">
+                            <label for="produce-category">Category</label>
+                            <select id="produce-category" name="category" required>
+                                <option value="">Choose a category</option>
+                                <option value="Cereals">Cereals</option>
+                                <option value="Vegetables">Vegetables</option>
+                                <option value="Fruits">Fruits</option>
+                                <option value="Legumes">Legumes</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </p>
+                        <p class="form-group produce-upload-field">
+                            <label for="produce-quantity">Quantity available</label>
+                            <input id="produce-quantity" name="quantity" type="number" min="0"
+                                step="any" placeholder="For example, 25" required>
+                        </p>
+                        <p class="form-group produce-upload-field">
+                            <label for="produce-unit">Unit of measurement</label>
+                            <select id="produce-unit" name="unit" required>
+                                <option value="">Choose a unit</option>
+                                <option value="kg">Kilograms (kg)</option>
+                                <option value="bag">Bags</option>
+                                <option value="tonne">Tonnes</option>
+                                <option value="crate">Crates</option>
+                                <option value="bunch">Bunches</option>
+                                <option value="unit">Units</option>
+                            </select>
+                        </p>
+                        <p class="form-group produce-upload-field">
+                            <label for="produce-price">Asking price (K per selected unit)</label>
+                            <input id="produce-price" name="price" type="number" min="0"
+                                step="0.01" placeholder="For example, 45.00" required>
+                        </p>
+                        <p class="form-group produce-upload-field">
+                            <label for="produce-location">Town or area</label>
+                            <input id="produce-location" name="location" type="text"
+                                placeholder="For example, Ndola" maxlength="100" required>
+                        </p>
+                        <p class="form-group produce-upload-field produce-upload-field--wide">
+                            <label for="produce-description">Description</label>
+                            <textarea id="produce-description" name="description" rows="4" maxlength="500"
+                                placeholder="Describe quality and availability." required></textarea>
+                        </p>
+                    </section>
+                </fieldset>
+
+                <!-- Farmer information supplies the name and contact shown on the temporary card. -->
+                <fieldset>
+                    <legend>Farmer and contact</legend>
+                    <section class="produce-upload-fields" aria-label="Farmer details">
+                        <p class="form-group produce-upload-field">
+                            <label for="farmer-name">Farmer or farm name</label>
+                            <input id="farmer-name" name="farmerName" type="text"
+                                placeholder="Name to show on the listing" maxlength="100" required>
+                        </p>
+                        <p class="form-group produce-upload-field">
+                            <label for="farmer-contact">Contact phone number</label>
+                            <input id="farmer-contact" name="contact" type="tel"
+                                placeholder="For example, +260 97 000 0000" autocomplete="tel" required>
+                        </p>
+                    </section>
+                </fieldset>
+
+                <!-- Image selection accepts web image formats and displays a removable local preview. -->
+                <fieldset>
+                    <legend>Produce image</legend>
+                    <p class="produce-upload-help" id="produce-image-help">
+                        Choose a JPEG, PNG, or WebP image up to 5 MB. Select another file to replace it, or remove it.
+                    </p>
+                    <p class="form-group produce-upload-field">
+                        <label for="produce-image">Select an image</label>
+                        <input id="produce-image" name="image" type="file"
+                            accept="image/jpeg,image/png,image/webp" aria-describedby="produce-image-help" required>
+                    </p>
+                    <figure class="produce-image-preview" id="produce-image-preview" hidden>
+                        <img id="produce-image-preview-img" alt="Selected produce preview">
+                        <figcaption>Selected image preview</figcaption>
+                    </figure>
+                    <button class="produce-remove-image" id="remove-produce-image" type="button" hidden>
+                        Remove selected image
+                    </button>
+                </fieldset>
+
+                <!-- Form actions continue to review, reset entries, or return to the product listings. -->
+                <section class="produce-upload-actions" aria-label="Form actions">
+                    <button class="btn-primary" type="submit">Preview Listing</button>
+                    <button class="produce-reset-button" type="reset">Reset form</button>
+                    <a class="produce-reset-button" href="products-services.html#featured-products">Cancel</a>
+                </section>
+                <p class="produce-form-message" id="produce-form-message" role="status"
+                    aria-live="polite" aria-atomic="true"></p>
+            </form>
+
+            <!-- The farmer reviews the proposed card and explicitly confirms before continuing. -->
+            <section class="produce-verification-section" id="produce-verification"
+                aria-labelledby="produce-preview-heading" hidden>
+                <header class="offerings-heading">
+                    <h2 id="produce-preview-heading">Review your listing</h2>
+                    <p>Confirming sends this temporary listing back to the product page in this browser session.
+                        Nothing is saved to a server or shared with other visitors.</p>
+                </header>
+                <article class="product-card produce-preview-card" id="produce-listing-preview">
+                    <figure class="product-card__figure">
+                        <img class="product-card__image" id="listing-image" alt="">
+                        <figcaption class="product-card__category" id="listing-category"></figcaption>
+                    </figure>
+                    <header class="product-card__header">
+                        <h3 class="product-card__name" id="listing-name"></h3>
+                        <p class="product-card__farm-name" id="listing-farmer"></p>
+                        <p class="product-card__location" id="listing-location"></p>
+                    </header>
+                    <p class="product-card__description" id="listing-description"></p>
+                    <p class="product-card__price" id="listing-price"></p>
+                    <p class="product-card__availability" id="listing-quantity"></p>
+                    <section class="product-card__footer" aria-label="Farmer contact">
+                        <a class="btn-farm-view" id="listing-contact"></a>
+                    </section>
+                </article>
+                <!-- Review actions let the farmer edit or confirm these details. -->
+                <section class="produce-verification-actions" aria-label="Listing confirmation actions">
+                    <button class="produce-reset-button" id="edit-produce-listing" type="button">
+                        Edit Information
+                    </button>
+                    <button class="btn-primary" id="confirm-produce-listing" type="button">
+                        Confirm and Publish Listing
+                    </button>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <!-- Shared footer keeps navigation and contact details consistent across pages. -->
+    <footer>
+        <section class="footer-col">
+            <h3>AgroNest</h3>
+            <p>Growing Food. Building Futures.</p>
+            <p>Integrated farming and practical agricultural support in Ndola, Zambia.</p>
+        </section>
+        <nav class="footer-col" aria-label="Explore AgroNest">
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products-services.html" aria-current="page">Products &amp; Services</a></li>
+                <li><a href="farm-resources.html">Farm &amp; Resources</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <section class="footer-col">
+            <h3>Contact</h3>
+            <address>
+                <p><a href="tel:+260970000000">+260 970 000 000</a></p>
+                <p><a href="mailto:info@agronest.com">info@agronest.com</a></p>
+                <p>Ndola, Copperbelt Province, Zambia</p>
+            </address>
+        </section>
+    </footer>
+
+    <!-- This standalone script handles the local image, review, and temporary listing handoff. -->
+    <script src="../js/produce-upload.js"></script>
+</body>
+
+</html>

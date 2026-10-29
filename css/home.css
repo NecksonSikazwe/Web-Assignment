@@ -1,0 +1,380 @@
+/* Homepage hero: layers a darkened crop over the background image for contrast. */
+.home-hero {
+  min-height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--green-hover);
+  color: #ffffff;
+}
+
+.home-hero::after {
+  /* Directional overlay keeps the text side readable without hiding the photo. */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7, 30, 17, 0.82), rgba(7, 30, 17, 0.2));
+}
+
+.home-hero > img {
+  /* Cover the full hero while keeping the image out of normal text flow. */
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.home-hero-content {
+  /* Constrain hero copy to the shared page width and layer it above the overlay. */
+  position: relative;
+  z-index: 1;
+  width: min(100% - 48px, var(--content-width));
+  margin: 0 auto;
+  padding: 72px 0;
+}
+
+.home-hero h1 {
+  /* Large headline scales fluidly between compact phones and desktop screens. */
+  max-width: 720px;
+  margin: 10px 0 18px;
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.08;
+}
+
+.home-hero-content > p:not(.home-kicker) {
+  max-width: 640px;
+  margin: 0 0 28px;
+  color: #f0f7f2;
+  font-size: clamp(17px, 2vw, 21px);
+}
+
+.home-kicker {
+  /* Small uppercase label introduces the page or featured offering. */
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.home-hero .home-kicker {
+  color: #f0d885;
+}
+
+.home-hero .btn-primary {
+  /* Reverse the primary button colors over the dark photo overlay. */
+  display: inline-block;
+  background: #ffffff;
+  color: var(--green-hover);
+}
+
+.home-hero .btn-primary:hover {
+  background: var(--soft);
+}
+
+/* Slider slides reuse the original hero design; controls occupy a separate grid row. */
+.home-slider {
+  /* A shared grid cell lets each hero replace the previous slide without shifting controls. */
+  display: grid;
+}
+
+.home-slider > .home-hero {
+  grid-area: 1 / 1;
+}
+
+.home-slider > .home-hero[hidden] {
+  /* Override the hero's display layout so hidden slides cannot overlap the active one. */
+  display: none;
+}
+
+.home-slider-slide h2 {
+  /* New slides use the same headline scale as the original hero's h1. */
+  max-width: 720px;
+  margin: 10px 0 18px;
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.08;
+}
+
+.home-slider-controls {
+  /* Place compact navigation beneath the image rather than over the original hero. */
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 14px 20px;
+  background: #ffffff;
+}
+
+.home-slider-controls[hidden] {
+  display: none;
+}
+
+.home-slider-arrow {
+  /* Circular arrows provide clear, reusable touch and pointer targets. */
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--green);
+  font-size: 21px;
+  line-height: 1;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.home-slider-arrow:hover {
+  /* Reverse the arrow colors on hover to match the site's green action palette. */
+  border-color: var(--green);
+  background: var(--green);
+  color: #ffffff;
+}
+
+.home-slider-dots {
+  /* Keep slide selectors centered between the previous and next buttons. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-slider-dots button {
+  /* Small circular indicators are individual buttons for keyboard and touch access. */
+  width: 12px;
+  height: 12px;
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #bfd1c3;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.home-slider-dots button[aria-current="true"] {
+  /* The current indicator is larger and brand-colored to expose slide state. */
+  transform: scale(1.2);
+  background: var(--green);
+}
+
+.home-slider-status {
+  /* Preserve live slide announcements for assistive technology without visual clutter. */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.home-section {
+  /* Shared vertical rhythm separates the homepage content areas. */
+  padding: 64px 24px;
+}
+
+.home-tint {
+  background: var(--card-bg);
+  border-block: 1px solid var(--line);
+}
+
+.home-section-heading {
+  /* Limit heading copy width and center section introductions. */
+  max-width: 760px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.home-section-heading h2,
+.latest-section h2 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: clamp(26px, 3.2vw, 36px);
+  line-height: 1.2;
+}
+
+.home-section-heading > p:last-child,
+.latest-section > div > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.home-card-grid,
+.home-reasons,
+.home-service-list {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.home-card-grid,
+.home-reasons {
+  /* Two-column card layouts collapse to one column at the mobile breakpoint. */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.home-card,
+.home-reasons li {
+  /* Shared card surfaces keep image and text blocks visually grouped. */
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.home-card img {
+  /* Consistent image height gives each production card an aligned top edge. */
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.home-card > div,
+.home-card > section,
+.home-reasons li {
+  /* Pad the semantic content area inside each card. */
+  padding: 24px;
+}
+
+.home-card h3,
+.home-reasons li h3 {
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: 20px;
+}
+
+.home-card p,
+.home-reasons li p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.home-link-row {
+  max-width: 1000px;
+  margin: 24px auto 0;
+  text-align: center;
+}
+
+.home-link-row a {
+  color: var(--green);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.home-service-list {
+  /* Arrange service summaries in a simple two-column list on wide screens. */
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.home-service-list li {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.home-service-list strong {
+  color: var(--green);
+}
+
+.home-service-list span {
+  color: var(--muted);
+}
+
+.latest-section {
+  /* Align the final resource callout and its button on a shared baseline. */
+  max-width: 1048px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.latest-section .btn-primary {
+  flex-shrink: 0;
+}
+
+.latest-section > header {
+  max-width: 680px;
+}
+
+@media (max-width: 700px) {
+  /* Stack homepage cards and controls on smaller screens while retaining the hero. */
+  .home-hero {
+    min-height: 440px;
+  }
+
+  .home-slider-controls {
+    gap: 14px;
+    padding: 12px 16px;
+  }
+
+  .home-slider-dots {
+    gap: 8px;
+  }
+
+  .home-slider-dots button {
+    width: 10px;
+    height: 10px;
+  }
+
+  .home-hero-content {
+    width: calc(100% - 40px);
+  }
+
+  .home-card-grid,
+  .home-reasons,
+  .home-service-list {
+    grid-template-columns: 1fr;
+  }
+
+  .latest-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 380px) {
+  /* Reduce control gaps on very narrow screens to avoid horizontal overflow. */
+  .home-slider-controls {
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Remove control transitions and scaling for visitors who reduce motion. */
+  .home-slider-arrow,
+  .home-slider-dots button {
+    transition: none;
+  }
+
+  .home-slider-dots button[aria-current="true"] {
+    transform: none;
+  }
+}

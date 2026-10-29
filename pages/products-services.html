@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Page metadata and stylesheets set up the shared theme and this page's components. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Browse AgroNest crops, livestock and agricultural products from local farmers in Ndola, Copperbelt Province, Zambia. View prices, availability and contact farmers directly.">
+    <title>Products &amp; Services | AgroNest</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/products-services.css">
+</head>
+
+<body>
+    <!-- Site branding and direct access to an enquiry. -->
+    <header>
+        <a href="../index.html" class="logo-container" aria-label="AgroNest home">
+            <img src="../images/logo.png" alt="" width="40" height="40">
+            <span>AgroNest</span>
+        </a>
+        <nav class="header-actions" aria-label="Quick actions">
+            <a href="contact.html">Enquire with us</a>
+        </nav>
+    </header>
+
+    <!-- Primary navigation links to the existing pages. -->
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="../marketplace.php">Marketplace</a></li>
+            <li><a href="products-services.html" aria-current="page">Products &amp; Services</a></li>
+            <li><a href="farm-resources.html">Farm &amp; Resources</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="../farmer/login.php">Farmer login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content groups featured listings, production areas, and farm services. -->
+    <main>
+        <!-- Page introduction describes the farm's combined products and services. -->
+        <header class="page-header products-services-header">
+            <p class="products-kicker">AgroNest · Ndola, Zambia</p>
+            <h1>Products &amp; Services</h1>
+            <p>Our integrated farm combines crop and livestock production with practical services, training and
+                agricultural information.</p>
+            <p><a class="btn-primary" href="../marketplace.php">Browse available marketplace products</a></p>
+        </header>
+
+        <!-- Featured listings connect each product card to its farmer and category metadata. -->
+        <section class="offerings-section products-showcase-section" id="featured-products"
+            aria-labelledby="featured-products-heading">
+            <header class="offerings-heading">
+                <p class="products-kicker">From local farms</p>
+                <h2 id="featured-products-heading">Featured agricultural products</h2>
+                <p>Fresh produce from farmers in Ndola and the Copperbelt. View a product, explore the farm it comes
+                    from, and contact the farmer directly.</p>
+            </header>
+
+            <!-- Filter bar — prepared for JavaScript filtering -->
+            <nav class="product-filter-bar" aria-label="Filter products by category">
+                <ul class="product-filter-list" id="product-filter-list">
+                    <li>
+                        <button type="button" class="product-filter-btn product-filter-btn--active"
+                            data-filter="all" aria-pressed="true">
+                            All products
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="product-filter-btn"
+                            data-filter="vegetables" aria-pressed="false">
+                            Vegetables
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="product-filter-btn"
+                            data-filter="grains" aria-pressed="false">
+                            Grains &amp; Legumes
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="product-filter-btn"
+                            data-filter="poultry" aria-pressed="false">
+                            Poultry
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="product-filter-btn"
+                            data-filter="livestock" aria-pressed="false">
+                            Livestock
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Each article represents one product; data attributes identify its category and farm. -->
+            <ul class="product-card-grid" id="product-card-grid" aria-label="Product listings">
+
+                <!-- PRODUCT 001 — Tomatoes -->
+                <li>
+                    <article class="product-card"
+                             data-product-id="001"
+                             data-farmer-id="001"
+                             data-category="vegetables"
+                             data-available="true">
+
+                        <figure class="product-card__figure">
+                            <img src="../images/tomato.jpg"
+                                 alt="Fresh, ripe tomatoes ready for market"
+                                 class="product-card__image"
+                                 loading="lazy">
+                            <figcaption class="product-card__category">Vegetables</figcaption>
+                        </figure>
+
+                        <header class="product-card__header">
+                            <h3 class="product-card__name">Fresh Tomatoes</h3>
+                            <p class="product-card__farm-name">
+                                <a href="farm-resources.html#farm-001" class="product-card__farm-link"
+                                   data-farm-id="001">
+                                    AgroNest Farm
+                                </a>
+                            </p>
+                            <p class="product-card__location">Ndola, Copperbelt Province</p>
+                        </header>
+
+                        <p class="product-card__description">
+                            Fresh, locally grown tomatoes. Harvested in season and suited for household cooking,
+                            restaurants and traders.
+                        </p>
+
+                        <p class="product-card__price" aria-label="Price: K25 per kilogram">
+                            <strong>K25</strong> <span class="product-card__unit">/ kg</span>
+                        </p>
+
+                        <p class="product-card__availability product-card__availability--available"
+                           data-availability="available">
+                            <span aria-hidden="true">●</span> Available
+                        </p>
+
+                        <footer class="product-card__footer">
+                            <a href="farm-resources.html#product-001"
+                               class="btn-product-view"
+                               data-action="view-product"
+                               data-product-id="001">
+                                View product
+                            </a>
+                            <a href="farm-resources.html#farm-001"
+                               class="btn-farm-view"
+                               data-action="view-farm"
+                               data-farm-id="001">
+                                View farm
+                            </a>
+                            <button type="button"
+                                    class="btn-contact-farmer"
+                                    data-action="contact-farmer"
+                                    data-farmer-id="001"
+                                    data-farmer-name="AgroNest Farm"
+                                    data-product-id="001"
+                                    data-product-name="Fresh Tomatoes"
+                                    aria-label="Contact farmer about Fresh Tomatoes">
+                                Contact farmer
+                            </button>
+                        </footer>
+
+                    </article>
+                </li>
+
+                <!-- PRODUCT 002 — Maize -->
+                <li>
+                    <article class="product-card"
+                             data-product-id="002"
+                             data-farmer-id="001"
+                             data-category="grains"
+                             data-available="true">
+
+                        <figure class="product-card__figure">
+                            <img src="../images/maize.jpg"
+                                 alt="Fresh maize cobs ready for sale"
+                                 class="product-card__image"
+                                 loading="lazy">
+                            <figcaption class="product-card__category">Grains &amp; Legumes</figcaption>
+                        </figure>
+
+                        <header class="product-card__header">
+                            <h3 class="product-card__name">Maize</h3>
+                            <p class="product-card__farm-name">
+                                <a href="farm-resources.html#farm-001" class="product-card__farm-link"
+                                   data-farm-id="001">
+                                    AgroNest Farm
+                                </a>
+                            </p>
+                            <p class="product-card__location">Ndola, Copperbelt Province</p>
+                        </header>
+
+                        <p class="product-card__description">
+                            Staple maize from responsible crop production. Available after harvest season.
+                            Suitable for household consumption, mills and institutional buyers.
+                        </p>
+
+                        <p class="product-card__price" aria-label="Price: K90 per 50kg bag">
+                            <strong>K90</strong> <span class="product-card__unit">/ 50 kg bag</span>
+                        </p>
+
+                        <p class="product-card__availability product-card__availability--available"
+                           data-availability="available">
+                            <span aria-hidden="true">●</span> Available
+                        </p>
+
+                        <footer class="product-card__footer">
+                            <a href="farm-resources.html#product-002"
+                               class="btn-product-view"
+                               data-action="view-product"
+                               data-product-id="002">
+                                View product
+                            </a>
+                            <a href="farm-resources.html#farm-001"
+                               class="btn-farm-view"
+                               data-action="view-farm"
+                               data-farm-id="001">
+                                View farm
+                            </a>
+                            <button type="button"
+                                    class="btn-contact-farmer"
+                                    data-action="contact-farmer"
+                                    data-farmer-id="001"
+                                    data-farmer-name="AgroNest Farm"
+                                    data-product-id="002"
+                                    data-product-name="Maize"
+                                    aria-label="Contact farmer about Maize">
+                                Contact farmer
+                            </button>
+                        </footer>
+
+                    </article>
+                </li>
+
+                <!-- PRODUCT 003 — Broilers -->
+                <li>
+                    <article class="product-card"
+                             data-product-id="003"
+                             data-farmer-id="001"
+                             data-category="poultry"
+                             data-available="true">
+
+                        <figure class="product-card__figure">
+                            <img src="../images/poultry-farming.jpg"
+                                 alt="Broiler chickens raised as part of the AgroNest integrated farm"
+                                 class="product-card__image"
+                                 loading="lazy">
+                            <figcaption class="product-card__category">Poultry</figcaption>
+                        </figure>
+
+                        <header class="product-card__header">
+                            <h3 class="product-card__name">Broiler Chickens</h3>
+                            <p class="product-card__farm-name">
+                                <a href="farm-resources.html#farm-001" class="product-card__farm-link"
+                                   data-farm-id="001">
+                                    AgroNest Farm
+                                </a>
+                            </p>
+                            <p class="product-card__location">Ndola, Copperbelt Province</p>
+                        </header>
+
+                        <p class="product-card__description">
+                            Broiler chickens from an attentively managed flock. Suitable for households, restaurants
+                            and traders. Contact us for current flock availability.
+                        </p>
+
+                        <p class="product-card__price" aria-label="Price: K120 per bird">
+                            <strong>K120</strong> <span class="product-card__unit">/ bird</span>
+                        </p>
+
+                        <p class="product-card__availability product-card__availability--available"
+                           data-availability="available">
+                            <span aria-hidden="true">●</span> Available
+                        </p>
+
+                        <footer class="product-card__footer">
+                            <a href="farm-resources.html#product-003"
+                               class="btn-product-view"
+                               data-action="view-product"
+                               data-product-id="003">
+                                View product
+                            </a>
+                            <a href="farm-resources.html#farm-001"
+                               class="btn-farm-view"
+                               data-action="view-farm"
+                               data-farm-id="001">
+                                View farm
+                            </a>
+                            <button type="button"
+                                    class="btn-contact-farmer"
+                                    data-action="contact-farmer"
+                                    data-farmer-id="001"
+                                    data-farmer-name="AgroNest Farm"
+                                    data-product-id="003"
+                                    data-product-name="Broiler Chickens"
+                                    aria-label="Contact farmer about Broiler Chickens">
+                                Contact farmer
+                            </button>
+                        </footer>
+
+                    </article>
+                </li>
+
+                <!-- PRODUCT 004 — Rape -->
+                <li>
+                    <article class="product-card"
+                             data-product-id="004"
+                             data-farmer-id="001"
+                             data-category="vegetables"
+                             data-available="false">
+
+                        <figure class="product-card__figure">
+                            <img src="../images/leafyvegetables.jpg"
+                                 alt="Leafy rape vegetables growing in a farm field"
+                                 class="product-card__image product-card__image--leafy"
+                                 loading="lazy">
+                            <figcaption class="product-card__category">Vegetables</figcaption>
+                        </figure>
+
+                        <header class="product-card__header">
+                            <h3 class="product-card__name">Rape (Leafy Vegetable)</h3>
+                            <p class="product-card__farm-name">
+                                <a href="farm-resources.html#farm-001" class="product-card__farm-link"
+                                   data-farm-id="001">
+                                    AgroNest Farm
+                                </a>
+                            </p>
+                            <p class="product-card__location">Ndola, Copperbelt Province</p>
+                        </header>
+
+                        <p class="product-card__description">
+                            Fresh leafy rape grown for local food markets. A popular vegetable for household
+                            and institutional use. Seasonal availability applies.
+                        </p>
+
+                        <p class="product-card__price" aria-label="Price: K15 per bundle">
+                            <strong>K15</strong> <span class="product-card__unit">/ bundle</span>
+                        </p>
+
+                        <p class="product-card__availability product-card__availability--unavailable"
+                           data-availability="unavailable">
+                            <span aria-hidden="true">○</span> Out of season
+                        </p>
+
+                        <footer class="product-card__footer">
+                            <a href="farm-resources.html#product-004"
+                               class="btn-product-view"
+                               data-action="view-product"
+                               data-product-id="004">
+                                View product
+                            </a>
+                            <a href="farm-resources.html#farm-001"
+                               class="btn-farm-view"
+                               data-action="view-farm"
+                               data-farm-id="001">
+                                View farm
+                            </a>
+                            <button type="button"
+                                    class="btn-contact-farmer"
+                                    data-action="contact-farmer"
+                                    data-farmer-id="001"
+                                    data-farmer-name="AgroNest Farm"
+                                    data-product-id="004"
+                                    data-product-name="Rape"
+                                    aria-label="Contact farmer about Rape">
+                                Contact farmer
+                            </button>
+                        </footer>
+
+                    </article>
+                </li>
+
+                <!-- PRODUCT 005 — Soybeans -->
+                <li>
+                    <article class="product-card"
+                             data-product-id="005"
+                             data-farmer-id="001"
+                             data-category="grains"
+                             data-available="true">
+
+                        <figure class="product-card__figure">
+                            <img src="../images/soyabean.jpg"
+                                 alt="A close-up of harvested soybeans"
+                                 class="product-card__image"
+                                 loading="lazy">
+                            <figcaption class="product-card__category">Grains &amp; Legumes</figcaption>
+                        </figure>
+
+                        <header class="product-card__header">
+                            <h3 class="product-card__name">Soybeans</h3>
+                            <p class="product-card__farm-name">
+                                <a href="farm-resources.html#farm-001" class="product-card__farm-link"
+                                   data-farm-id="001">
+                                    AgroNest Farm
+                                </a>
+                            </p>
+                            <p class="product-card__location">Ndola, Copperbelt Province</p>
+                        </header>
+
+                        <p class="product-card__description">
+                            Soybeans grown as part of a crop rotation plan. Suitable for processors, traders and
+                            institutional buyers. Contact us for bulk enquiries.
+                        </p>
+
+                        <p class="product-card__price" aria-label="Price: K110 per 50kg bag">
+                            <strong>K110</strong> <span class="product-card__unit">/ 50 kg bag</span>
+                        </p>
+
+                        <p class="product-card__availability product-card__availability--available"
+                           data-availability="available">
+                            <span aria-hidden="true">●</span> Available
+                        </p>
+
+                        <footer class="product-card__footer">
+                            <a href="farm-resources.html#product-005"
+                               class="btn-product-view"
+                               data-action="view-product"
+                               data-product-id="005">
+                                View product
+                            </a>
+                            <a href="farm-resources.html#farm-001"
+                               class="btn-farm-view"
+                               data-action="view-farm"
+                               data-farm-id="001">
+                                View farm
+                            </a>
+                            <button type="button"
+                                    class="btn-contact-farmer"
+                                    data-action="contact-farmer"
+                                    data-farmer-id="001"
+                                    data-farmer-name="AgroNest Farm"
+                                    data-product-id="005"
+                                    data-product-name="Soybeans"
+                                    aria-label="Contact farmer about Soybeans">
+                                Contact farmer
+                            </button>
+                        </footer>
+
+                    </article>
+                </li>
+
+                <!-- PRODUCT 006 — Eggs -->
+                <li>
+                    <article class="product-card"
+                             data-product-id="006"
+                             data-farmer-id="001"
+                             data-category="poultry"
+                             data-available="true">
+
+                        <figure class="product-card__figure">
+                            <img src="../images/eggs.jpg"
+                                 alt="Fresh eggs arranged in cartons"
+                                 class="product-card__image"
+                                 loading="lazy">
+                            <figcaption class="product-card__category">Poultry</figcaption>
+                        </figure>
+
+                        <header class="product-card__header">
+                            <h3 class="product-card__name">Eggs</h3>
+                            <p class="product-card__farm-name">
+                                <a href="farm-resources.html#farm-001" class="product-card__farm-link"
+                                   data-farm-id="001">
+                                    AgroNest Farm
+                                </a>
+                            </p>
+                            <p class="product-card__location">Ndola, Copperbelt Province</p>
+                        </header>
+
+                        <p class="product-card__description">
+                            Fresh eggs from layers maintained with good husbandry and flock health care. Suitable
+                            for households, restaurants and institutional buyers.
+                        </p>
+
+                        <p class="product-card__price" aria-label="Price: K75 per tray of 30">
+                            <strong>K75</strong> <span class="product-card__unit">/ tray (30)</span>
+                        </p>
+
+                        <p class="product-card__availability product-card__availability--available"
+                           data-availability="available">
+                            <span aria-hidden="true">●</span> Available
+                        </p>
+
+                        <footer class="product-card__footer">
+                            <a href="farm-resources.html#product-006"
+                               class="btn-product-view"
+                               data-action="view-product"
+                               data-product-id="006">
+                                View product
+                            </a>
+                            <a href="farm-resources.html#farm-001"
+                               class="btn-farm-view"
+                               data-action="view-farm"
+                               data-farm-id="001">
+                                View farm
+                            </a>
+                            <button type="button"
+                                    class="btn-contact-farmer"
+                                    data-action="contact-farmer"
+                                    data-farmer-id="001"
+                                    data-farmer-name="AgroNest Farm"
+                                    data-product-id="006"
+                                    data-product-name="Eggs"
+                                    aria-label="Contact farmer about Eggs">
+                                Contact farmer
+                            </button>
+                        </footer>
+
+                    </article>
+                </li>
+
+            </ul>
+
+            <!-- This safe, reusable card structure is cloned for farmer-confirmed listings. -->
+            <template id="temporary-product-card-template">
+                <li>
+                    <article class="product-card">
+                        <figure class="product-card__figure">
+                            <img class="product-card__image" alt="" loading="lazy">
+                            <figcaption class="product-card__category"></figcaption>
+                        </figure>
+                        <header class="product-card__header">
+                            <h3 class="product-card__name"></h3>
+                            <p class="product-card__farm-name"></p>
+                            <p class="product-card__location"></p>
+                        </header>
+                        <p class="product-card__description"></p>
+                        <p class="product-card__price">
+                            <strong></strong><span class="product-card__unit"></span>
+                        </p>
+                        <p class="product-card__availability product-card__availability--available"></p>
+                        <footer class="product-card__footer">
+                            <a class="btn-contact-farmer"></a>
+                        </footer>
+                    </article>
+                </li>
+            </template>
+
+            <!-- Availability note and enquiry link follow the product cards. -->
+            <p class="offerings-note">
+                Availability and prices vary by season and current production. Contact AgroNest for up-to-date
+                information or to place an enquiry.
+            </p>
+            <a class="btn-primary offerings-cta" href="contact.html">Enquire about a product</a>
+            <a class="btn-primary offerings-cta" href="produce-upload.html">Sell Your Produce</a>
+            <p class="produce-listing-success" id="produce-listing-success" role="status"
+                aria-live="polite" aria-atomic="true" hidden></p>
+        </section>
+
+        <!-- ================================================
+             EXISTING SECTIONS — preserved exactly
+             ================================================ -->
+
+        <!-- Crop offering cards describe the farm's main field and horticultural crops. -->
+        <section class="offerings-section" aria-labelledby="crop-heading">
+            <header class="offerings-heading">
+                <p class="products-kicker">Field production</p>
+                <h2 id="crop-heading">Crops</h2>
+                <p>Crop production focuses on food crops and horticulture, guided by seasonal planning and responsible
+                    soil and water management.</p>
+            </header>
+            <ul class="offerings-grid">
+                <li class="offering-card">
+                    <h3>Maize</h3>
+                    <p>A staple crop supported by thoughtful variety selection, field preparation and timely crop care.</p>
+                </li>
+                <li class="offering-card">
+                    <h3>Soybeans</h3>
+                    <p>A legume crop included in diversified production and crop rotation planning.</p>
+                </li>
+                <li class="offering-card">
+                    <h3>Rape</h3>
+                    <p>A leafy vegetable crop grown for fresh local food markets.</p>
+                </li>
+                <li class="offering-card">
+                    <h3>Tomatoes</h3>
+                    <p>A horticultural crop requiring attentive water, nutrient and pest management.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Livestock cards summarize animal production offerings. -->
+        <section class="offerings-section offerings-tint" aria-labelledby="livestock-heading">
+            <header class="offerings-heading">
+                <p class="products-kicker">Animal production</p>
+                <h2 id="livestock-heading">Livestock</h2>
+                <p>Livestock production is an important part of a diversified farm and local food supply.</p>
+            </header>
+            <ul class="offerings-grid">
+                <li class="offering-card">
+                    <h3>Broilers</h3>
+                    <p>Poultry meat production supported by attentive housing, nutrition and flock care.</p>
+                </li>
+                <li class="offering-card">
+                    <h3>Eggs</h3>
+                    <p>Egg production from layers, with good husbandry and flock health as priorities.</p>
+                </li>
+                <li class="offering-card">
+                    <h3>Goats</h3>
+                    <p>Small-ruminant production that contributes to a mixed and resilient farming system.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Services section contains the advisory, training, information, and soil-care offerings. -->
+        <section class="offerings-section" id="farm-services" aria-labelledby="services-heading">
+            <header class="offerings-heading">
+                <p class="products-kicker">Practical support</p>
+                <h2 id="services-heading">Agricultural services</h2>
+                <p>We share practical support for farm decisions, production knowledge and sustainable soil care.</p>
+            </header>
+            <ul class="offerings-grid">
+                <li class="offering-card">
+                    <h3>Farm advisory</h3>
+                    <p>Guidance on farm planning and crop and livestock production, shaped around a farmer's context.</p>
+                </li>
+                <li class="offering-card">
+                    <h3>Training</h3>
+                    <p>Practical learning and knowledge sharing on farming methods and farm management.</p>
+                </li>
+                <li class="offering-card">
+                    <h3>Farm information</h3>
+                    <p>Accessible tips and resources to support informed agricultural decisions.</p>
+                </li>
+                <li class="offering-card">
+                    <h3>Organic manure</h3>
+                    <p>An organic soil amendment that can contribute nutrients and organic matter; use according to crop
+                        and soil needs.</p>
+                </li>
+            </ul>
+            <p class="offerings-note">Availability and timing can vary by season. Contact AgroNest to ask about current
+                production, service details or training opportunities.</p>
+            <a class="btn-primary offerings-cta" href="contact.html">Contact AgroNest</a>
+        </section>
+    </main>
+
+    <!-- Enquiry dialog receives farmer and product context from the existing site script. -->
+    <dialog id="contact-farmer-dialog" aria-labelledby="dialog-heading" aria-modal="true">
+        <header>
+            <h2 id="dialog-heading">Enquire about a product</h2>
+            <button type="button" id="dialog-close" aria-label="Close enquiry form">✕</button>
+        </header>
+        <p id="dialog-context" class="dialog-context"></p>
+        <!-- The dialog form groups visitor details and provides explicit submit and cancel controls. -->
+        <form id="farmer-enquiry-form"
+              data-target-farmer-id=""
+              data-target-product-id=""
+              action="contact.html"
+              method="get"
+              novalidate>
+            <fieldset>
+                <legend>Your details</legend>
+                <!-- Contact inputs are grouped with labels for accessible identification. -->
+                <p class="form-group">
+                    <label for="enquiry-name">Your name</label>
+                    <input type="text" id="enquiry-name" name="name"
+                           placeholder="Enter your name" required autocomplete="name">
+                </p>
+                <p class="form-group">
+                    <label for="enquiry-email">Your email</label>
+                    <input type="email" id="enquiry-email" name="email"
+                           placeholder="Enter your email" required autocomplete="email">
+                </p>
+                <p class="form-group">
+                    <label for="enquiry-phone">Phone (optional)</label>
+                    <input type="tel" id="enquiry-phone" name="phone"
+                           placeholder="Enter your phone number" autocomplete="tel">
+                </p>
+                <p class="form-group">
+                    <label for="enquiry-message">Message</label>
+                    <textarea id="enquiry-message" name="message" rows="4"
+                              placeholder="Write your enquiry here..." required></textarea>
+                </p>
+            </fieldset>
+            <!-- Dialog actions submit the enquiry or dismiss the dialog. -->
+            <footer class="dialog-footer">
+                <button type="submit" class="btn-primary" id="dialog-submit">Send enquiry</button>
+                <button type="button" id="dialog-cancel">Cancel</button>
+            </footer>
+        </form>
+    </dialog>
+
+    <!-- Shared footer provides page navigation and farm contact information. -->
+    <footer>
+        <section class="footer-col">
+            <h3>AgroNest</h3>
+            <p>Growing Food. Building Futures.</p>
+            <p>Integrated farming and practical agricultural support in Ndola, Zambia.</p>
+        </section>
+        <nav class="footer-col" aria-label="Explore AgroNest">
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products-services.html" aria-current="page">Products &amp; Services</a></li>
+                <li><a href="farm-resources.html">Farm &amp; Resources</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <section class="footer-col">
+            <h3>Contact</h3>
+            <address>
+                <p><a href="tel:+260970000000">+260 970 000 000</a></p>
+                <p><a href="mailto:info@agronest.com">info@agronest.com</a></p>
+                <p>Ndola, Copperbelt Province, Zambia</p>
+            </address>
+        </section>
+    </footer>
+
+    <!-- The upload workflow returns confirmed temporary listings; shared interactions remain separate. -->
+    <script src="../js/produce-upload.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

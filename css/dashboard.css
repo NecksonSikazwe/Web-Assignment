@@ -1,0 +1,112 @@
+/* Shared layout rules for the protected farmer and administrator dashboards. */
+.dashboard-account {
+  /* Keep the signed-in identity visually secondary to the dashboard actions. */
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dashboard-logout {
+  margin: 0;
+}
+
+.dashboard-logout button {
+  padding: 4px 6px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--navigation-text);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.dashboard-logout button:hover {
+  border-bottom-color: var(--focus);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.dashboard-main {
+  /* Match the shared content width and vertical rhythm of the public pages. */
+  max-width: var(--content-width);
+  min-height: 48vh;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+
+.dashboard-welcome {
+  margin-bottom: 28px;
+}
+
+.dashboard-kicker {
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.dashboard-welcome h1 {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: clamp(28px, 5vw, 36px);
+  line-height: 1.2;
+}
+
+.dashboard-welcome > p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+.dashboard-links {
+  /* Farmer/admin tools form a responsive card grid with the same shared styling. */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.dashboard-tool-card {
+  display: block;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+.dashboard-tool-card:hover {
+  border-color: var(--green);
+  box-shadow: var(--shadow-lg);
+}
+
+.dashboard-tool-card h2 {
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: 20px;
+}
+
+.dashboard-tool-card p {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
+.dashboard-tool-card span {
+  color: var(--green);
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  /* Stack dashboard tool cards and let the signed-in label use its own row. */
+  .dashboard-account {
+    width: 100%;
+  }
+
+  .dashboard-main {
+    padding: 32px 16px 44px;
+  }
+
+  .dashboard-links {
+    grid-template-columns: 1fr;
+  }
+}
